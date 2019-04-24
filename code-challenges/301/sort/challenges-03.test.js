@@ -22,6 +22,16 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    if(a < b){
+      return -1;
+    }
+    if(a > b){
+      return 1;
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
