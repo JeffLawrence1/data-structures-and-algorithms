@@ -188,6 +188,8 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+// inspiration from -- https://stackoverflow.com/questions/34066752/sort-object-of-weekdays-like-sunday-monday-saturday
+
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
   let sortskie = {
