@@ -7,6 +7,10 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 
 const sortBackwards = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    return b - a;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -18,6 +22,16 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    if(a < b){
+      return -1;
+    }
+    if(a > b){
+      return 1;
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,6 +41,10 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    return a.length - b.length;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,6 +55,18 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    var wordA = a.toUpperCase();
+    var wordB = b.toUpperCase();
+    if(wordA < wordB){
+      return -1;
+    }
+    if(wordA > wordB){
+      return 1;
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,6 +82,10 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    return a.price - b.price;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,6 +96,12 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    var numA = a.toString();
+    var numB = b.toString();
+    return numA.length - numB.length;
+  });
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -83,6 +123,17 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+
+    if(a.lastName < b.lastName){
+      return -1;
+    }
+    if(a.lastName > b.lastName){
+      return 1;
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +145,27 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    if(a.lastName < b.lastName){
+      return -1;
+    }
+    if(a.lastName > b.lastName){
+      return 1;
+    }
+    if(a.lastName === b.lastName){
+      if(a.firstName < b.firstName){
+        return -1;
+      }
+      if(a.firstName > b.firstName){
+        return 1;
+      }
+      if(a.firstName === b.firstName){
+        return a.age - b.age;
+      }
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,8 +188,25 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+// inspiration from -- https://stackoverflow.com/questions/34066752/sort-object-of-weekdays-like-sunday-monday-saturday
+
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  let sortskie = {
+    'monday': 1,
+    'tuesday': 2,
+    'wednesday': 3,
+    'thursday': 4,
+    'friday': 5,
+    'saturday': 6,
+    'sunday': 7
+  };
+  arr.sort( (a,b) => {
+    let dayA = a.dayOfWeek.toLowerCase();
+    let dayB = b.dayOfWeek.toLowerCase();
+    return sortskie[dayA] - sortskie[dayB];
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
