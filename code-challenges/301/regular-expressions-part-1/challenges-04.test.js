@@ -24,6 +24,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  // let tempArr = [];
+  let regex = /[A-Z][a-z]+/g;
+  if(regex.test(str)){
+    // tempArr.push(str);
+    return str.match(regex);
+  }
+  // return tempArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
