@@ -54,11 +54,12 @@ Write a function named matchMonth which uses a regular expression pattern to mat
 If the user enters any of these four inputs, return true. For any other input, return false.
 Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
+// inspired by Mike!
 
 const matchMonth = (input) => {
   // Solution code here...
-  // let regex = /(Oct)\s+(oct)\s+(October)\s+(october)/g;
-  // return regex.test(input);
+  let regex = /\b([Oo]ct)(\b)?(ober)?(\b)/g;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
