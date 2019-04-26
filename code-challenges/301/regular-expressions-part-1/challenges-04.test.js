@@ -23,14 +23,11 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
-  // let tempArr = [];
+
   let regex = /[A-Z][a-z]+/g;
   if(regex.test(str)){
-    // tempArr.push(str);
     return str.match(regex);
   }
-  // return tempArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +37,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let tempArr = [];
+  let regex = /[A-J][a-z]+/g;
+  arr.forEach(element => {
+    if(regex.test(element)){
+      tempArr.push(element);
+    }
+  });
+  return tempArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
