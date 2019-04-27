@@ -72,6 +72,9 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  for(let i = 0; i < gruffaloCrumble.ingredients.length; i++){
+    let answer = (gruffaloCrumble.ingredients[i].slice(gruffaloCrumble.ingredients[i].indexOf(' ', 4)));result.push(answer.slice(1));
+  }
   return result;
 };
 
