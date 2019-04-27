@@ -88,8 +88,12 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  // for(let i = 0; i < recipe.ingredients.length; i++){
-  //   let answer = 
+  for(let i = 0; i < recipe.ingredients.length; i++){
+    let answer =  recipe.ingredients[i].split(' ');
+    answer.splice(0, 2);
+    let newString = answer.join();
+    newString = newString.replace(/,/g, ' ');
+    result.push(newString);
   }
   return result;
 };
