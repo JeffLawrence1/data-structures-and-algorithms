@@ -72,8 +72,8 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  for(let i = 0; i < gruffaloCrumble.ingredients.length; i++){
-    let answer = gruffaloCrumble.ingredients[i].slice(gruffaloCrumble.ingredients[i].indexOf(' ', 4));result.push(answer.slice(1));
+  for(let i = 0; i < recipe.ingredients.length; i++){
+    let answer = recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ', 4));result.push(answer.slice(1));
   }
   // recipe.ingredients.forEach( (element, idx) => {
   //   let answer = element[idx].slice(element[idx].indexOf(' ', 4));
@@ -91,6 +91,7 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  // for(let i = 0; i < )
   return result;
 };
 
