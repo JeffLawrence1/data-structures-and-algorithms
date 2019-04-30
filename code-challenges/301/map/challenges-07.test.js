@@ -69,6 +69,17 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  let result = arr.map( (element) => {
+    let answer = '';
+    if(isNaN(element)){
+      return answer = 'N/A';
+    }else if(element % 2 === 0){
+      return answer = 'even';
+    }else if(element % 2 !== 0){
+      return answer = 'odd';
+    }
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
