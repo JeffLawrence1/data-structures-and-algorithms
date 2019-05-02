@@ -8,6 +8,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  let answer = arr.filter( (element) => {
+    return (element % 2);
+  });
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
