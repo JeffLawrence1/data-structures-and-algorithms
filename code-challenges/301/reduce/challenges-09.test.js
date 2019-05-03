@@ -71,6 +71,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let tempArr = [];
+  arr.reduce( (accumulator, currentVal) => {
+    tempArr.push(currentVal.name);
+  }, 0);
+  return tempArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
