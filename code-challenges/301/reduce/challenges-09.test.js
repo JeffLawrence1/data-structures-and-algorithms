@@ -86,6 +86,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (arr) => {
   // Solution code here...
+  let answer = arr.split('').reduce( (accumulator, currentVal) => {
+    return currentVal + accumulator;
+  });
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
