@@ -142,6 +142,13 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let answer = arr.reduce( (accumulator, currentValue) => {
+    if(currentValue.children){
+      accumulator += currentValue.children.length;
+    }
+    return accumulator;
+  }, 0);
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
