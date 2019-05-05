@@ -35,7 +35,6 @@ const totalSum = (input) => {
   let sum = 0;
   input.map( (element) => {
     return element.forEach( (e) => {
-      console.log(e);
       sum += e;
     });
   });
@@ -52,6 +51,15 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  return input.map ( (element) => {
+    return element.filter( e => {
+      if(typeof e === 'number' && e % 5 === 0){
+        return true;
+      }
+    }).map( (ele) => {
+      return Math.pow(2, ele);
+    });
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
