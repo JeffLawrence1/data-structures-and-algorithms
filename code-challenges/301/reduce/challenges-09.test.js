@@ -162,11 +162,12 @@ const calculateAverage = (arr) => {
   let answer = arr.reduce( (accumulator, currentVal) => {
 
     accumulator.sum += currentVal;
+    accumulator.count++;
     return accumulator;
 
   }, { count: 0, sum: 0 });
 
-  return answer.sum / arr.length;
+  return answer.sum / answer.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
