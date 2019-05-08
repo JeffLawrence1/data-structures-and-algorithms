@@ -70,6 +70,18 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let answer;
+  arr.forEach(element => {
+    element.items.forEach(e => {
+      // console.log(e);
+      if(e.name === 'Treats'){
+        console.log('here');
+        answer = e.quantity;
+      }
+    });
+  });
+  console.log(answer);
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
