@@ -8,6 +8,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
+  let answer = [];
+  arr.forEach(element => {
+    answer.push(element.charAt(0));
+  });
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
