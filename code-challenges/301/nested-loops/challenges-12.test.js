@@ -21,9 +21,9 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 const grandTotal = (stores) => {
   // Solution code here...
   let answer = [];
-  for(var i = 0; i < stores[0].length; i++){
+  for(let i = 0; i < stores[0].length; i++){
     let sum = 0;
-    for(var j = 0; j < stores.length; j++){
+    for(let j = 0; j < stores.length; j++){
       sum += stores[j][i];
     }
     answer.push(sum);
@@ -73,14 +73,11 @@ const howManyTreats = (arr) => {
   let answer;
   arr.forEach(element => {
     element.items.forEach(e => {
-      // console.log(e);
       if(e.name === 'Treats'){
-        console.log('here');
         answer = e.quantity;
       }
     });
   });
-  console.log(answer);
   return answer;
 };
 
