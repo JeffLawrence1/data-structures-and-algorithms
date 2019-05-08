@@ -185,35 +185,24 @@ Rows are seperated by newline "\n" characters. Columns are seperated by commas. 
 The function should parse the string as rows and columns and compute the sum of the values for each row. Return an array with the sum of the values in each row.
 For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
+//inspired by mike and felipe
 
 const excel = (str) => {
   // Solution code here...
-//   let answer = [];
-//   let newStr = str.replace(/\n/g, ',');
-//   // console.log(newStr);
-//   let newArr = newStr.split(',');
-//   // console.log(newArr);
+  let arr = str.split('');
+  let result = [0, 0, 0];
+  let index = 0;
 
-//   let newNew = [];
+  arr.forEach(item => {
+    if (item === '\n') {
+      index += 1;
+    } else if (item !== ',') {
+      result[index] += Number(item);
+    }
+  });
 
-//   for(let s = 0; s < newArr.length; s++){
-//     newNew.push(parseInt(newArr[s]));
-//   }
-//   console.log(newNew.length);
-
-
-//   for(let i = 0; i < 9; i + 2){
-//     let sum = 0;
-//     console.log(i);
-//     for(let j = 0; j <= 2; j++){
-//       console.log(sum);
-//       sum += newNew[i + j];
-//     }
-//     answer.push(sum);
-//   }
-
-//   return answer;
-// };
+  return result;
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
