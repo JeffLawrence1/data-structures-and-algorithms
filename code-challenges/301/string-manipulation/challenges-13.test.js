@@ -128,6 +128,13 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+  return arr.map(element => {
+    return element.filter(e => {
+      if(!(e.includes('Brook'))){
+        return e;
+      }
+    });
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
