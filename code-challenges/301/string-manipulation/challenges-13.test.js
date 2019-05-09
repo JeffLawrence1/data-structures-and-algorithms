@@ -106,6 +106,16 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  let flag = false;
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i].includes(target)){
+      flag = true;
+    }else{
+      flag = false;
+      break;
+    }
+  }
+  return flag;
 };
 
 /* ------------------------------------------------------------------------------------------------
