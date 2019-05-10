@@ -89,6 +89,7 @@ let biggerThanLuke = (arr) => {
     if(Number(currentVal.mass) > Number(arr[0].mass)){
       accumulator.push(currentVal.name);
     }
+    return accumulator;
   }, []).join(' - ');
 };
 
