@@ -1,2 +1,32 @@
 # data-structures-and-algorithms
 Data Structures and Algorithms repo for 301 and 401
+
+* [Array-filter](./code-challenges/301/filter)
+
+* [Array-map](./code-challenges/301/map)
+
+* [Array-methods](./code-challenges/301/chaining)
+
+* [Array-reduce](./code-challenges/301/reduce)
+
+* [everything](./code-challenges/301/review)
+
+* [for-each](./code-challenges/301/for-each)
+
+* [nested-for-loops](./code-challenges/301/nested-loops)
+
+* [object-iteration](./code-challenges/301/object-entries)
+
+* [regex-2](./code-challenges/301/regex-part-two)
+
+* [regular-expressions](./code-challenges/301/regex-part-one)
+
+* [sort](./code-challenges/301/sort)
+
+* [string-manipulation](./code-challenges/301/string-manipulation)
+
+* [string-methods](./code-challenges/301/string-methods)
+
+* [value-vs-reference](./code-challenges/301/value-vs-reference)
+
+* [array_reverse](./code-challenges/401/arrayReverse)
