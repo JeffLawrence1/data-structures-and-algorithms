@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose",
-    "watch": "jest --watchall"
+    "watch": "jest --watchall",
+    "start": "node array-reverse.js"
   },
   "keywords": [],
   "author": "",
