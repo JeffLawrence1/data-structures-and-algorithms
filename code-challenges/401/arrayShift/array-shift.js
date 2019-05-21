@@ -24,3 +24,5 @@ function insertShiftArray(arr, val){
   }
   return newArr;
 }
+
+console.log(insertShiftArray([1, 2, 4, 5], 3));
