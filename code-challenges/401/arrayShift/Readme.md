@@ -1,12 +1,15 @@
-# Reverse an Array
+# Challenge Summary
 <!-- Short summary or background information -->
-Reversing an array
-## Challenge
+insert into middle of array shifting other values down
+
+## Challenge Description
 <!-- Description of the challenge -->
-Challenge is to reverse an array without using any js built ins
+put a provided value into middle of array 
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-Whiteboarded then coded
+whiteboarded then coded
+
 ## Solution
 <!-- Embedded whiteboard image -->
-* [whiteboard image](../assets/array-reverse.jpg)
+* [whiteboard image](../assets/array-shift.jpg)
