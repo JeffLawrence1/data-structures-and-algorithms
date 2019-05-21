@@ -1,3 +1,7 @@
+import { ModuleMap } from "jest-haste-map";
+
+// partners with Mike, Chloie, Jeff
+
 function insertShiftArray(arr, val){
   let arrLength = arr.length;
   let newArr = [];
@@ -25,4 +29,5 @@ function insertShiftArray(arr, val){
   return newArr;
 }
 
-console.log(insertShiftArray([1, 2, 4, 5], 3));
+module.exports = insertShiftArray;
+

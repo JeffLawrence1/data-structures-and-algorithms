@@ -6,12 +6,13 @@
   "scripts": {
     "test": "jest --coverage --verbose",
     "watch": "jest --watchall",
-    "start": "node array-reverse.js"
+    "start": "node array-reverse.js",
+    "lint": "eslint **/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "jest": "^24.1.0"
+    "jest": "^24.8.0"
   }
 }
