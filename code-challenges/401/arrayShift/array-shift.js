@@ -5,6 +5,7 @@
 function insertShiftArray(arr, val){
   let arrLength = arr.length;
   let newArr = [];
+  if(typeof arr !== 'object' || typeof val !== 'number') {return null;}
   if(arrLength %2 === 0){
     for(let i = 0; i < arrLength + 1; i++){
       if(i === arrLength / 2){
