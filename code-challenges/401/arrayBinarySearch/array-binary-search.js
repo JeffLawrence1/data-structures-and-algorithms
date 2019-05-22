@@ -1,10 +1,9 @@
 'use strict';
 
-function BinarySearch(arr, val){
+function binarySearch(arr, val){
   let start =0;
   let end = arr.length - 1;
   let mid = 0;
-  let answer = -1;
 
   while(start <= end){
     mid = Math.floor((start + end) / 2);
@@ -13,9 +12,11 @@ function BinarySearch(arr, val){
     }else if(arr[mid] > val){
       end = mid - 1;
     }else{
-      answer = mid;
+      return mid;
     }
   }
-  return answer;
+  return -1;
 }
 
+console.log(binarySearch([1, 3, 5, 6], 3));
+console.log(binarySearch([1, 3, 5, 6], 2));
