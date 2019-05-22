@@ -5,6 +5,8 @@ function binarySearch(arr, val){
   let end = arr.length - 1;
   let mid = 0;
 
+  if(typeof arr !== 'object' || typeof val !== 'number') {return null;}
+
   while(start <= end){
     mid = Math.floor((start + end) / 2);
     if(arr[mid] < val){
@@ -18,5 +20,4 @@ function binarySearch(arr, val){
   return -1;
 }
 
-console.log(binarySearch([1, 3, 5, 6], 3));
-console.log(binarySearch([1, 3, 5, 6], 2));
+module.exports = binarySearch;

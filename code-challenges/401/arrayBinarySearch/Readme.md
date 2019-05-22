@@ -1,9 +1,9 @@
-# Reverse an Array
+# Array binary search
 <!-- Short summary or background information -->
-Reversing an array
+binary search on array
 ## Challenge
 <!-- Description of the challenge -->
-Challenge is to reverse an array without using any js built ins
+Challenge is to use binary search on an array without using any js built ins to return index of a passed in value
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Whiteboarded then coded
