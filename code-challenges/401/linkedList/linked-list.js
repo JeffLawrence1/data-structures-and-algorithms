@@ -20,26 +20,30 @@ class SinglyLinkedList {
     return node.val;
   }
 
-  includes (list, val){
-    if(list){
-      let current = list.head;
-      while(current){
-        if(current.val === val){
-          return true;
-        }
+  includes (val){
+
+    let current = this.head;
+    while(current){
+      if(current.val === val){
+        return true;
+      }else{
         current = current.next;
       }
     }
     return false;
   }
 
+
+
   print (){
     let current = this.head;
-
-    while(current.next !== null){
-      console.log(current.next.val);
+    let results = [];
+    while(current){
+      console.log(current.val);
+      results.push(current.val);
       current = current.next;
     }
+    return results;
   }
 }
 
