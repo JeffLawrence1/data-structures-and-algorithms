@@ -31,5 +31,14 @@ class SinglyLinkedList {
     }
     return false;
   }
+
+  print (){
+    let current = this.head;
+
+    while(current.next !== null){
+      console.log(current.next.val);
+      current = current.next;
+    }
+  }
 }
 
