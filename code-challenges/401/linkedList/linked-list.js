@@ -11,6 +11,13 @@ class SinglyLinkedList {
   constructor(){
     this.head = null;
   }
+  
+  insert (val){
+    let node = new Node(val);
+    node.val = val;
+    node.next = this.head;
+    this.head = node;
+  }
 
 }
 
