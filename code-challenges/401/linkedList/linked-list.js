@@ -11,7 +11,7 @@ class SinglyLinkedList {
   constructor(){
     this.head = null;
   }
-  
+
   insert (val){
     let node = new Node(val);
     node.val = val;
@@ -19,5 +19,17 @@ class SinglyLinkedList {
     this.head = node;
   }
 
+  includes (list, val){
+    if(list){
+      let current = list.head;
+      while(current){
+        if(current.val === val){
+          return true;
+        }
+        current = current.next;
+      }
+    }
+    return false;
+  }
 }
 
