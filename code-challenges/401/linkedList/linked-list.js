@@ -17,6 +17,7 @@ class SinglyLinkedList {
     node.val = val;
     node.next = this.head;
     this.head = node;
+    return node.val;
   }
 
   includes (list, val){
@@ -42,3 +43,4 @@ class SinglyLinkedList {
   }
 }
 
+module.exports = SinglyLinkedList;
