@@ -66,13 +66,13 @@ class SinglyLinkedList {
     if(current.val === val){
       node.next = this.head;
       this.head = node;
-      return val;
+      return newVal;
     }else{
       while(current){
         if(current.next.val === val){
           node.next = current.next;
           current.next = node;
-          return val;
+          return newVal;
         }else{
           return 'node not found';
         }
