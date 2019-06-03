@@ -14,7 +14,7 @@ class SinglyLinkedList {
 
   insert (val){
     let node = new Node(val);
-    node.val = val;
+    // node.val = val;
     node.next = this.head;
     this.head = node;
     return node.val;
