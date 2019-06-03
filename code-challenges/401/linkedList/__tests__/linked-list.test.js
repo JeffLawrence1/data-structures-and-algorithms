@@ -8,7 +8,7 @@ describe('Singly Linked List Module', () => {
 
 
   it('Can successfully instantiate an empty linked list', () => {
-    
+
     expect(newList).toBeDefined();
   });
 
@@ -46,5 +46,19 @@ describe('Singly Linked List Module', () => {
   it('Can properly return a collection of all the values that exist in the linked list', () => {
 
     expect(newList.print()).toEqual([33, 22, 11, 33, 22, 11, 3, 2, 1, 2, 1, 1]);
+  });
+
+  describe('print', () => {
+    it('should console.log once for every item in List', () => {
+      let mockConsoleLog = jest.spyOn(console, 'log');
+      mockConsoleLog.mockImplementation(() => true);
+
+      //act
+      newList.print();
+
+      //assert
+      // expect(mockConsoleLog).not.toBeCalled();
+      expect(mockConsoleLog).toBeCalled();
+    });
   });
 });
