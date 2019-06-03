@@ -60,4 +60,22 @@ describe('Singly Linked List Module', () => {
       // expect(mockConsoleLog).toBeCalled();
     });
   });
+
+  describe('append', () => {
+    it('Can successfully add a node to the end of the linked list', () => {
+      newList.insert(22);
+      newList.append(11);
+      expect(newList.head.next.val).toEqual(11);
+
+    });
+
+    it('Can successfully add multiple nodes to the end of a linked list', () => {
+      newList.insert(22);
+      newList.append(11);
+      newList.append(1);
+      expect(newList.head.next.val).toEqual(11);
+      expect(newList.head.next.next.val).toEqual(1);
+
+    });
+  });
 });
