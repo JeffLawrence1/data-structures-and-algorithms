@@ -14,14 +14,12 @@ class SinglyLinkedList {
 
   insert (val){
     let node = new Node(val);
-    // node.val = val;
     node.next = this.head;
     this.head = node;
     return node.val;
   }
 
   includes (val){
-
     let current = this.head;
     while(current){
       if(current.val === val){
@@ -33,8 +31,6 @@ class SinglyLinkedList {
     return false;
   }
 
-
-
   print (){
     let current = this.head;
     let results = [];
@@ -44,6 +40,18 @@ class SinglyLinkedList {
       current = current.next;
     }
     return results;
+  }
+
+  append (val){
+
+  }
+
+  insertBefore (val, newVal){
+
+  }
+
+  insertAfter (val, newVal){
+    
   }
 }
 
