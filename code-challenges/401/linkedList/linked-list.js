@@ -13,7 +13,8 @@ class SinglyLinkedList {
   }
 
   insert (val){
-    let node = new Node(val);
+    let node = new Node();
+    node.val = val;
     node.next = this.head;
     this.head = node;
     return node.val;
@@ -43,11 +44,13 @@ class SinglyLinkedList {
   }
 
   append (val){
-    let node = new Node(val);
+    let node = new Node();
+    node.val = val;
     let current = this.head;
     while(current){
       if(current.next === null){
         current.next = node;
+        return val;
       }else{
         current = current.next;
       }
@@ -55,7 +58,8 @@ class SinglyLinkedList {
   }
 
   insertBefore (val, newVal){
-    let node = new Node(newVal);
+    let node = new Node();
+    node.val = newVal;
     let current = this.head;
     while(current){
       if(current.next.val === val){
@@ -69,7 +73,18 @@ class SinglyLinkedList {
   }
 
   insertAfter (val, newVal){
-
+    let node = new Node();
+    node.val = newVal;
+    let current = this.head;
+    while(current){
+      if(current.val === val){
+        node.next = current.next;
+        current.next = node;
+        return val;  //for testing
+      }else{
+        return 'node not found';
+      }
+    }
   }
 }
 
