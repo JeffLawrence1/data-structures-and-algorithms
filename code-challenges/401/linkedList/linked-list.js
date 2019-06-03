@@ -58,13 +58,19 @@ class SinglyLinkedList {
     let node = new Node();
     node.val = newVal;
     let current = this.head;
-    while(current){
-      if(current.next.val === val){
-        node.next = current.next;
-        current.next = node;
-        return val;
-      }else{
-        return 'node not found';
+    if(current.val === val){
+      node.next = this.head;
+      this.head = node;
+      return val;
+    }else{
+      while(current){
+        if(current.next.val === val){
+          node.next = current.next;
+          current.next = node;
+          return val;
+        }else{
+          return 'node not found';
+        }
       }
     }
   }
@@ -79,9 +85,10 @@ class SinglyLinkedList {
         current.next = node;
         return val;
       }else{
-        return 'node not found';
+        current = current.next;
       }
     }
+    return 'node not found';
   }
 }
 

@@ -78,4 +78,42 @@ describe('Singly Linked List Module', () => {
 
     });
   });
+
+  describe('insertBefore', () => {
+    it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+      newList.insert(11);
+      newList.insert(22);
+      newList.insert(33);
+      newList.insertBefore(22, 2);
+      expect(newList.head.next.val).toEqual(2);
+
+    });
+
+    it('Can successfully insert a node before the first node of a linked list', () => {
+      newList.insert(11);
+      newList.insert(22);
+      newList.insert(33);
+      newList.insertBefore(33, 2);
+      expect(newList.head.val).toEqual(2);
+    });
+  });
+
+  describe('insertAfter', () => {
+    it('Can successfully insert after a node in the middle of the linked list', () => {
+      newList.insert(11);
+      newList.insert(22);
+      newList.insert(33);
+      newList.insertAfter(22, 2);
+      expect(newList.head.next.next.val).toEqual(2);
+
+    });
+
+    it('Can successfully insert a node before the first node of a linked list', () => {
+      newList.insert(11);
+      newList.insert(22);
+      newList.insert(33);
+      newList.insertBefore(33, 2);
+      expect(newList.head.val).toEqual(2);
+    });
+  });
 });
