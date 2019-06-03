@@ -65,7 +65,7 @@ class SinglyLinkedList {
       if(current.next.val === val){
         node.next = current.next;
         current.next = node;
-        return val;  //for testing
+        return val;
       }else{
         return 'node not found';
       }
@@ -80,7 +80,7 @@ class SinglyLinkedList {
       if(current.val === val){
         node.next = current.next;
         current.next = node;
-        return val;  //for testing
+        return val;
       }else{
         return 'node not found';
       }
