@@ -43,7 +43,15 @@ class SinglyLinkedList {
   }
 
   append (val){
-
+    let node = new Node(val);
+    let current = this.head;
+    while(current){
+      if(current.next === null){
+        current.next = node;
+      }else{
+        current = current.next;
+      }
+    }
   }
 
   insertBefore (val, newVal){
@@ -51,7 +59,7 @@ class SinglyLinkedList {
   }
 
   insertAfter (val, newVal){
-    
+
   }
 }
 
