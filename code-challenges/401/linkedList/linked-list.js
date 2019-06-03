@@ -43,13 +43,18 @@ class SinglyLinkedList {
   append (val){
     let node = new Node();
     node.val = val;
-    let current = this.head;
-    while(current){
-      if(current.next === null){
-        current.next = node;
-        return val;
-      }else{
-        current = current.next;
+    let current;
+    if(this.head === null){
+      this.head = node;
+    }else{
+      current = this.head;
+      while(current){
+        if(current.next === null){
+          current.next = node;
+          return val;
+        }else{
+          current = current.next;
+        }
       }
     }
   }

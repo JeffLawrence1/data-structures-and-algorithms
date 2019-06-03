@@ -69,6 +69,12 @@ describe('Singly Linked List Module', () => {
 
     });
 
+    it('Can successfully add a node to the beginning of the linked list', () => {
+      newList.append(11);
+      expect(newList.head.val).toEqual(11);
+
+    });
+
     it('Can successfully add multiple nodes to the end of a linked list', () => {
       newList.insert(22);
       newList.append(11);
@@ -108,12 +114,12 @@ describe('Singly Linked List Module', () => {
 
     });
 
-    it('Can successfully insert a node before the first node of a linked list', () => {
+    it('Can successfully insert a node after the last node of the linked list', () => {
       newList.insert(11);
       newList.insert(22);
       newList.insert(33);
-      newList.insertBefore(33, 2);
-      expect(newList.head.val).toEqual(2);
+      newList.insertAfter(11, 2);
+      expect(newList.head.next.next.next.val).toEqual(2);
     });
   });
 });
