@@ -29,4 +29,10 @@ Data Structures and Algorithms repo for 301 and 401
 
 * [value-vs-reference](./code-challenges/301/value-vs-reference)
 
-* [array_reverse](./code-challenges/401/arrayReverse)
+* [array-reverse](./code-challenges/401/arrayReverse)
+
+* [array-Binary-Search](./code-challenges/401/arrayBinarySearch)
+
+* [array-Shift](./code-challenges/401/arrayShift)
+
+* [linked-List](./code-challenges/401/linkedList)
