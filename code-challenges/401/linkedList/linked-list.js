@@ -34,13 +34,10 @@ class SinglyLinkedList {
 
   print (){
     let current = this.head;
-    let results = [];
     while(current){
       console.log(current.val);
-      results.push(current.val);
       current = current.next;
     }
-    return results;
   }
 
   append (val){
