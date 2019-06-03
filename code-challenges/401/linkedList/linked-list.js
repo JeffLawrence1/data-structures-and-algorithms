@@ -55,7 +55,17 @@ class SinglyLinkedList {
   }
 
   insertBefore (val, newVal){
-
+    let node = new Node(newVal);
+    let current = this.head;
+    while(current){
+      if(current.next.val === val){
+        node.next = current.next;
+        current.next = node;
+        return val;  //for testing
+      }else{
+        return 'node not found';
+      }
+    }
   }
 
   insertAfter (val, newVal){
