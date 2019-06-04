@@ -125,21 +125,51 @@ describe('Singly Linked List Module', () => {
 
   describe('kthFromEnd', () => {
     it('Where k is greater than the length of the linked list', () => {
-      let node3 = {value: 3, next: null};
-      let node2 = {value: 2, next: node3};
-      let node1 = {value: 1, next: node2};
+      let node3 = {val: 3, next: null};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
       newList.head = node1;
       newList.length = 3;
       console.log(newList);
-      expect(newList.kthFromEnd(5)).toEqual('error k longer than SLL');
+      expect(newList.kthFromEnd(5)).toEqual('index not here!!!');
     });
 
-    it('Can successfully insert a node after the last node of the linked list', () => {
-      newList.insert(11);
-      newList.insert(22);
-      newList.insert(33);
-      newList.insertAfter(11, 2);
-      expect(newList.head.next.next.next.val).toEqual(2);
+    it('Where k and the length of the list are the same', () => {
+      let node3 = {val: 3, next: null};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      newList.head = node1;
+      newList.length = 3;
+      console.log(newList);
+      expect(newList.kthFromEnd(3)).toEqual(1);
+    });
+
+    it('Where k is not a positive integer', () => {
+      let node3 = {val: 3, next: null};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      newList.head = node1;
+      newList.length = 3;
+      console.log(newList);
+      expect(newList.kthFromEnd(-3)).toEqual('index not here!!!');
+    });
+
+    it('Where the linked list is of a size 1', () => {
+
+      let node1 = {val: 1, next: null};
+      newList.head = node1;
+      newList.length = 1;
+      expect(newList.kthFromEnd(1)).toEqual(1);
+    });
+
+    it('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+      let node3 = {val: 3, next: null};
+      let node2 = {val: 2, next: node3};
+      let node1 = {val: 1, next: node2};
+      newList.head = node1;
+      newList.length = 3;
+      // console.error(newList.kthFromEnd(0));
+      expect(newList.kthFromEnd(1)).toEqual(2);
     });
   });
 });

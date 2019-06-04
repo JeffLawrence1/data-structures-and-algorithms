@@ -104,18 +104,25 @@ class SinglyLinkedList {
   }
 
   kthFromEnd (k){
-    let index = (this.length -k) - 1;
+    let index = (this.length - k) -1;
     let current = this.head;
-    if(k > this.length){
-      return 'error k longer than SLL';
+
+    if(k > this.length || k < 0){
+      return 'index not here!!!';
+    }else if(k === this.length){
+      // console.log(this.head);
+      return this.head.val;
     }
+
     for(let i = 0; i <= index; i++){
       if(i === index){
+        console.error(i, current);
         return current.val;
       }else{
         current = current.next;
       }
     }
+    console.error('oops');
   }
 }
 
