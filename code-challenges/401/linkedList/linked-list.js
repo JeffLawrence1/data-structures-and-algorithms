@@ -10,7 +10,7 @@ class Node {
 class SinglyLinkedList {
   constructor(){
     this.head = null;
-    this.length = 1;
+    this.length = 0;
   }
 
   insert (val){
@@ -101,6 +101,18 @@ class SinglyLinkedList {
       }
     }
     return 'node not found';
+  }
+
+  kthFromEnd (k){
+    let index = (this.length -k) - 1;
+    let current = this.head;
+    for(let i = 0; i <= index; i++){
+      if(i === index){
+        return current.val;
+      }else{
+        current = current.next;
+      }
+    }
   }
 }
 
