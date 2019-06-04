@@ -88,7 +88,7 @@ class SinglyLinkedList {
       if(current.val === val){
         node.next = current.next;
         current.next = node;
-        return val;
+        return newVal;
       }else{
         current = current.next;
       }
