@@ -10,6 +10,7 @@ class Node {
 class SinglyLinkedList {
   constructor(){
     this.head = null;
+    this.length = 0;
   }
 
   insert (val){
@@ -17,6 +18,7 @@ class SinglyLinkedList {
     node.val = val;
     node.next = this.head;
     this.head = node;
+    this.length += 1;
     return node.val;
   }
 
@@ -46,11 +48,13 @@ class SinglyLinkedList {
     let current;
     if(this.head === null){
       this.head = node;
+      this.length += 1;
     }else{
       current = this.head;
       while(current){
         if(current.next === null){
           current.next = node;
+          this.length += 1;
           return val;
         }else{
           current = current.next;
@@ -66,12 +70,14 @@ class SinglyLinkedList {
     if(current.val === val){
       node.next = this.head;
       this.head = node;
+      this.length += 1;
       return newVal;
     }else{
       while(current){
         if(current.next.val === val){
           node.next = current.next;
           current.next = node;
+          this.length += 1;
           return newVal;
         }else{
           return 'node not found';
@@ -88,12 +94,35 @@ class SinglyLinkedList {
       if(current.val === val){
         node.next = current.next;
         current.next = node;
+        this.length += 1;
         return newVal;
       }else{
         current = current.next;
       }
     }
     return 'node not found';
+  }
+
+  kthFromEnd (k){
+    let index = (this.length - k) -1;
+    let current = this.head;
+
+    if(k > this.length || k < 0){
+      return 'index not here!!!';
+    }else if(k === this.length){
+      // console.log(this.head);
+      return this.head.val;
+    }
+
+    for(let i = 0; i <= index; i++){
+      if(i === index){
+        console.error(i, current);
+        return current.val;
+      }else{
+        current = current.next;
+      }
+    }
+    console.error('oops');
   }
 }
 
