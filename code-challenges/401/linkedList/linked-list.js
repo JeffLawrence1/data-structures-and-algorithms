@@ -106,6 +106,9 @@ class SinglyLinkedList {
   kthFromEnd (k){
     let index = (this.length -k) - 1;
     let current = this.head;
+    if(k > this.length){
+      return 'error k longer than SLL';
+    }
     for(let i = 0; i <= index; i++){
       if(i === index){
         return current.val;

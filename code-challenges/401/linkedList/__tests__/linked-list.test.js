@@ -122,6 +122,26 @@ describe('Singly Linked List Module', () => {
       expect(newList.head.next.next.next.val).toEqual(2);
     });
   });
+
+  describe('kthFromEnd', () => {
+    it('Where k is greater than the length of the linked list', () => {
+      let node3 = {value: 3, next: null};
+      let node2 = {value: 2, next: node3};
+      let node1 = {value: 1, next: node2};
+      newList.head = node1;
+      newList.length = 3;
+      console.log(newList);
+      expect(newList.kthFromEnd(5)).toEqual('error k longer than SLL');
+    });
+
+    it('Can successfully insert a node after the last node of the linked list', () => {
+      newList.insert(11);
+      newList.insert(22);
+      newList.insert(33);
+      newList.insertAfter(11, 2);
+      expect(newList.head.next.next.next.val).toEqual(2);
+    });
+  });
 });
 
 // let node1 = {value: 1, next: node2};
