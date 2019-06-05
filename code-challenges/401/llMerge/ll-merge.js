@@ -8,7 +8,7 @@ function mergeLists(list1, list2){
   for(let i = 0; i <= list1.length; i++){
     if(current1.next === null){
       list1.insertAfter(current1.val, current2.val);
-      console.log(list1);
+      // console.log(list1);
       break;
     }
     list1.insertAfter(current1.val, current2.val);
