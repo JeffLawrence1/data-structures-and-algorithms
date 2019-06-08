@@ -36,3 +36,5 @@ Data Structures and Algorithms repo for 301 and 401
 * [array-Shift](./code-challenges/401/arrayShift)
 
 * [linked-List](./code-challenges/401/linkedList)
+
+* [stacks-and-queues](./code-challenges/401/stacksAndQueues)
