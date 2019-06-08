@@ -100,6 +100,11 @@ describe('Stack and Queues Tests', () => {
       expect(queue).toBeInstanceOf(Queue);
       expect(queue.front).toBeNull();
     });
+
+    it('Can successfully instantiate an empty queue', () => {
+      expect(queue).toBeInstanceOf(Queue);
+      expect(queue.peek()).toBeNull();
+    });
   });
 
 });

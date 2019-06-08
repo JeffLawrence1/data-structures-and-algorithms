@@ -57,7 +57,11 @@ class Queue{
   }
 
   peek() {
-    return this.front.val;
+    if(!this.front){
+      return null;
+    }else{
+      return this.front.val;
+    }
   }
 }
 
