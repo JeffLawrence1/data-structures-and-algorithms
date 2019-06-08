@@ -1,10 +1,11 @@
     
 'use strict';
 
-const stacksAndQueues = require('../stacksAndQueues.js');
+const stacksAndQueues = require('../stacks-and-queues');
 
 
 describe('Stack and Queues Tests', () => {
+  let Stack = stacksAndQueues.Stack;
 
   describe('Stack testing', () => {
 
@@ -16,7 +17,7 @@ describe('Stack and Queues Tests', () => {
 
     it('Can successfully push onto a stack', () => {
       stack.push(2);
-      expect(stack.top.value).toBe(2);
+      expect(stack.top.val).toBe(2);
     });
 
   });
