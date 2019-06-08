@@ -34,6 +34,14 @@ describe('Stack and Queues Tests', () => {
       stack.pop();
       expect(stack.top.val).toBe(2);
     });
+
+    it('Can successfully empty a stack after multiple pops', () => {
+      stack.push(1);
+      stack.push(2);
+      stack.pop();
+      stack.pop();
+      expect(stack.top).toBeNull();
+    });
   });
 
 });
