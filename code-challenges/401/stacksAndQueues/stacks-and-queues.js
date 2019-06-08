@@ -18,6 +18,11 @@ class Stack {
     node.next = this.top;
     this.top = node;
   }
+
+  pop(){
+    this.top = this.top.next;
+  }
+
 }
 
 module.exports = {Stack};

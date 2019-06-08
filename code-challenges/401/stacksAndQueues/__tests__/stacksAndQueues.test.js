@@ -27,6 +27,13 @@ describe('Stack and Queues Tests', () => {
       expect(stack.top.val).toBe(3);
     });
 
+    it('Can successfully pop off the stack', () => {
+      stack.push(1);
+      stack.push(2);
+      stack.push(3);
+      stack.pop();
+      expect(stack.top.val).toBe(2);
+    });
   });
 
 });
