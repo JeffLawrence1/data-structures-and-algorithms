@@ -76,6 +76,13 @@ describe('Stack and Queues Tests', () => {
       expect(queue.front.next.val).toBe(2);
       expect(queue.front.next.next.val).toBe(3);
     });
+
+    it('Can successfully dequeue out of a queue the expected value', () => {
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.dequeue();
+      expect(queue.front.val).toBe(2);
+    });
   });
 
 });
