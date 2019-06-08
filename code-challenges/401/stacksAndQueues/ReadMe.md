@@ -12,3 +12,12 @@ I thought about how to do this using a linked list, reviewed some of my linked l
 
 ## API
 <!-- Description of each method publicly available to your Stack and Queue-->
+Node class
+Stack class 
+  push()
+  pop()
+  peek()
+Queue class
+  enqueue()
+  dequeue()
+  peek()
