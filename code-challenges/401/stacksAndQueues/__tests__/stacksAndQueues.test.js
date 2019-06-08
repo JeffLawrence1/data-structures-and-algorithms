@@ -67,6 +67,15 @@ describe('Stack and Queues Tests', () => {
       queue.enqueue(1);
       expect(queue.front.val).toBe(1);
     });
+
+    it('Can successfully enqueue multiple values into a queue', () => {
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+      expect(queue.front.val).toBe(1);
+      expect(queue.front.next.val).toBe(2);
+      expect(queue.front.next.next.val).toBe(3);
+    });
   });
 
 });
