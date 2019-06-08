@@ -48,6 +48,11 @@ describe('Stack and Queues Tests', () => {
       stack.push(2);
       expect(stack.peek()).toBe(2);
     });
+
+    it('Can successfully instantiate an empty stack', () => {
+      expect(stack).toBeInstanceOf(Stack);
+      expect(stack.peek()).toBeNull();
+    });
   });
 
 });
