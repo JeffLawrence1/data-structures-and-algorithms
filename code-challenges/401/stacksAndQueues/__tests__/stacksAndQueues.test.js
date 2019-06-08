@@ -83,6 +83,12 @@ describe('Stack and Queues Tests', () => {
       queue.dequeue();
       expect(queue.front.val).toBe(2);
     });
+
+    it('Can successfully peek into a queue, seeing the expected value', () => {
+      queue.enqueue(1);
+      queue.enqueue(2);
+      expect(queue.peek()).toBe(1);
+    });
   });
 
 });

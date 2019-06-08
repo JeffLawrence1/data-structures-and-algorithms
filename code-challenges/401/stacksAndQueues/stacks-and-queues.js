@@ -55,6 +55,10 @@ class Queue{
   dequeue(){
     this.front = this.front.next;
   }
+
+  peek() {
+    return this.front.val;
+  }
 }
 
 module.exports = {Stack, Queue};
