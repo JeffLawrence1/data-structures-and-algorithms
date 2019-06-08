@@ -6,6 +6,7 @@ const stacksAndQueues = require('../stacks-and-queues');
 
 describe('Stack and Queues Tests', () => {
   let Stack = stacksAndQueues.Stack;
+  let Queue = stacksAndQueues.Queue;
 
   describe('Stack testing', () => {
 
@@ -52,6 +53,19 @@ describe('Stack and Queues Tests', () => {
     it('Can successfully instantiate an empty stack', () => {
       expect(stack).toBeInstanceOf(Stack);
       expect(stack.peek()).toBeNull();
+    });
+  });
+
+  describe('Queue Testing', () => {
+    let queue;
+
+    beforeEach(() => {
+      queue = new Queue();
+    });
+
+    it('Can successfully enqueue into a queue', () => {
+      queue.enqueue(1);
+      expect(queue.front.val).toBe(1);
     });
   });
 

@@ -30,7 +30,27 @@ class Stack {
       return this.top.val;
     }
   }
-
 }
 
-module.exports = {Stack};
+class Queue{
+  constructor(){
+    this.front = null;
+  }
+
+  enqueue(val) {
+    if (!val) return false;
+    let node = new Node(val);
+    let current = this.front;
+
+    if(!this.front){
+      this.front = node;
+    } else{
+      while(current.next){
+        current = current.next;
+      }
+      current.next = node;
+    }
+  }
+}
+
+module.exports = {Stack, Queue};
