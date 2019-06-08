@@ -20,6 +20,13 @@ describe('Stack and Queues Tests', () => {
       expect(stack.top.val).toBe(2);
     });
 
+    it('Can successfully push multiple nodes onto a stack', () => {
+      stack.push(1);
+      stack.push(2);
+      stack.push(3);
+      expect(stack.top.val).toBe(3);
+    });
+
   });
 
 });
