@@ -89,6 +89,17 @@ describe('Stack and Queues Tests', () => {
       queue.enqueue(2);
       expect(queue.peek()).toBe(1);
     });
+
+    it('Can successfully empty a queue after multiple dequeues', () => {
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+      queue.dequeue();
+      queue.dequeue();
+      queue.dequeue();
+      expect(queue).toBeInstanceOf(Queue);
+      expect(queue.front).toBeNull();
+    });
   });
 
 });
