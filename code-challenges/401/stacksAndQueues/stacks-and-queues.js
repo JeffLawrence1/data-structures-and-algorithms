@@ -23,6 +23,10 @@ class Stack {
     this.top = this.top.next;
   }
 
+  peek() {
+    return this.top.val;
+  }
+
 }
 
 module.exports = {Stack};

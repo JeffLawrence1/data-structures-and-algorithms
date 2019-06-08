@@ -42,6 +42,12 @@ describe('Stack and Queues Tests', () => {
       stack.pop();
       expect(stack.top).toBeNull();
     });
+
+    it('Can successfully peek the next item on the stack.', () => {
+      stack.push(1);
+      stack.push(2);
+      expect(stack.peek()).toBe(2);
+    });
   });
 
 });
