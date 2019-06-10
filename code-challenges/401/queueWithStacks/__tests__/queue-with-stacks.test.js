@@ -32,13 +32,21 @@ describe('Queue with Stacks Tests', () => {
     expect(pseudoQueue.stack1.peek()).toEqual(22);
   });
 
-  //   it('Can successfully pop off the stack', () => {
-  //     stack.push(1);
-  //     stack.push(2);
-  //     stack.push(3);
-  //     stack.pop();
-  //     expect(stack.top.val).toBe(2);
-  //   });
+  it('Can successfully dequeue one val', () => {
+    pseudoQueue.enqueue(12);
+    pseudoQueue.enqueue(22);
+    expect(pseudoQueue.dequeue()).toEqual(12);
+    expect(pseudoQueue.stack2.top.val).toEqual(22);
+  });
+
+  it('Can successfully dequeue multiple vals', () => {
+    pseudoQueue.enqueue(12);
+    pseudoQueue.enqueue(22);
+    pseudoQueue.enqueue(32);
+    expect(pseudoQueue.dequeue()).toEqual(12);
+    expect(pseudoQueue.dequeue()).toEqual(22);
+    expect(pseudoQueue.dequeue()).toEqual(32);
+  });
 
   //   it('Can successfully empty a stack after multiple pops', () => {
   //     stack.push(1);

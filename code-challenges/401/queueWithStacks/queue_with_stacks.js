@@ -47,8 +47,8 @@ class PseudoQueue{
   }
 
   dequeue(){
-    if(this.stack2 === 0){
-      if(this.stack1 === 0){return 'queue is empty'}
+    if(this.stack2.length === 0){
+      if(this.stack1.length === 0) return 'queue is empty';
       while(this.stack1.length > 0){
         let x = this.stack1.pop();
         this.stack2.push(x);
