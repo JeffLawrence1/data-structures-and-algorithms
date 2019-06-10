@@ -22,8 +22,10 @@ class Stack {
   }
 
   pop(){
+    let temp = this.top.val;
     this.top = this.top.next;
     this.length--;
+    return temp;
   }
 
   peek() {
@@ -40,8 +42,18 @@ class PseudoQueue{
     this.stack1 = new Stack();
     this.stack2 = new Stack();
   }
+  enqueue(val){
+    this.stack1.push(val);
+  }
 
-  
+  dequeue(){
+    if(this.stack2 === 0){
+      if(this.stack1 === 0){return 'queue is empty'}
+      while(this.stack1.length > 0){
+        let x = this.stack1.pop();
+      }
+    }
+  }
 }
 
 module.exports = PseudoQueue;
