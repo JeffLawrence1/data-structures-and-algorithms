@@ -15,6 +15,7 @@ class AnimalShelter{
   enqueue(name){
     let animal = new Animal(name);
     this.storage.push(animal);
+    console.log(this.storage);
   }
 
   dequeue(pref){
