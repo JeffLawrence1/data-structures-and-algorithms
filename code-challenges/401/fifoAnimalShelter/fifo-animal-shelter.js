@@ -2,20 +2,21 @@
 
 class Animal{
   constructor(name){
-    if(name !== 'cat' || name !== 'dog'){
-      return 'must be cat or dog';
-    }
     this.name = name;
   }
 }
+
 class AnimalShelter{
   constructor(){
     this.storage = [];
   }
   enqueue(name){
-    let animal = new Animal(name);
-    this.storage.push(animal);
-    console.log(this.storage);
+    if(name === 'cat' || name === 'dog'){
+      let animal = new Animal(name);
+      this.storage.push(animal);
+    }else{
+      return 'must be cat or dog';
+    }
   }
 
   dequeue(pref){

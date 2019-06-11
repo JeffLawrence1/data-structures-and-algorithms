@@ -19,7 +19,7 @@ describe('Animal Shelter', () => {
   it('Can properly enqueue into the shelter', () => {
     newShelter.enqueue('cat');
 
-    expect(newShelter.storage[0]).toEqual('cat');
+    expect(newShelter.storage[0].name).toEqual('cat');
   });
 
 
