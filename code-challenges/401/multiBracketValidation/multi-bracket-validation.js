@@ -1,6 +1,7 @@
 'use strict';
 
 function multiBracketValidation(input){
+  if (typeof input !== 'string') return 'Not a valid string';
 
   let arr = input.split('');
   let compareArr = [];
