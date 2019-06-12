@@ -5,8 +5,9 @@ function multiBracketValidation(input){
   let arr = input.split('');
   let compareArr = [];
   let refArr = ['(',')','[',']','{','}'];
+  let l = arr.length;
 
-  for(let i = 0; i < arr.length; i++){
+  for(let i = 0; i < l; i++){
     let shift = arr.shift();
     if(refArr.includes(shift)){
       if(shift === '(' || shift === '[' || shift === '{'){
