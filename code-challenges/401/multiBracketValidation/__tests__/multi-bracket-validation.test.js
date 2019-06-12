@@ -23,5 +23,15 @@ describe('Multi Bracket Validation', () => {
     expect(bracketValidation(badMatch)).toBe(false);
   });
 
+  it ('Should return true if the brackets match', () => {
+    let result = bracketValidation('(){}[]');
 
+    expect(result).toEqual(true);
+  });
+
+  it ('Should return false if the brackets do not match', () => {
+    let result = bracketValidation('()[}{]');
+
+    expect(result).toEqual(false);
+  });
 });
