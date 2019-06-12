@@ -8,7 +8,7 @@ function multiBracketValidation(input){
 
   for(let i = 0; i < arr.length; i++){
     let shift = arr.shift();
-    if(refArr.instanceof(shift)){
+    if(refArr.includes(shift)){
       if(shift === '(' || shift === '[' || shift === '{'){
         compareArr.push(shift);
       }else{
@@ -22,6 +22,7 @@ function multiBracketValidation(input){
       }
     }
   }
+  return arr.length === 0;
 }
 
 module.exports = multiBracketValidation;
