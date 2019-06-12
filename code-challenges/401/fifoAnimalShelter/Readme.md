@@ -13,3 +13,6 @@ I paid attention to the inclass demo, did some google research, a little plannin
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 AnimalShelter class <--- creates new animal and has enqueue and dequeue functions
+
+## Whiteboard Pic
+* [Pic](../assets/animalShelter.jpg)

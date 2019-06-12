@@ -38,3 +38,7 @@ Data Structures and Algorithms repo for 301 and 401
 * [linked-List](./code-challenges/401/linkedList)
 
 * [stacks-and-queues](./code-challenges/401/stacksAndQueues)
+
+* [queue-with-stacks](./code-challenges/401/queueWithStacks)
+
+* [fifo-animal-shelter](./code-challenges/401/fifoAnimalShelter)
