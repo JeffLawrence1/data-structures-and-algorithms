@@ -1,6 +1,6 @@
 # Multi Bracket Validation
 <!-- Short summary or background information -->
-Multi Bracket Validation function that takes a string and outputs a boolean
+Multi Bracket Validation function that takes a string and only a string and outputs a boolean
 
 ## Challenge
 <!-- Description of the challenge -->
