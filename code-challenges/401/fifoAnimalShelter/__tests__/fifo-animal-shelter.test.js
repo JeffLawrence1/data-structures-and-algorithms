@@ -11,17 +11,54 @@ describe('Animal Shelter', () => {
     newShelter = new AnimalShelter();
   });
 
-  it('Can successfully instantiate an empty shelter', () => {
+  describe('constructor', () => {
 
-    expect(newShelter).toBeDefined();
+    it('Can successfully instantiate an instance of AnimalShelter', () => {
+      expect(newShelter).toBeDefined();
+      expect(newShelter).toBeInstanceOf(AnimalShelter);
+    });
+
+    it('Should create an empty storage', () => {
+      expect(newShelter.storage).toBeDefined();
+      expect(newShelter.storage).toBeInstanceOf(Array);
+    });
   });
 
-  it('Can properly enqueue into the shelter', () => {
-    newShelter.enqueue('cat');
+  describe('enqueue', () => {
 
-    expect(newShelter.storage[0].name).toEqual('cat');
+    it('Can properly enqueue into the shelter', () => {
+      newShelter.enqueue('cat');
+      expect(newShelter.storage[0].name).toEqual('cat');
+      expect(newShelter.storage.length).toEqual(1);
+    });
+
+    it('Should not add an animal if no value is provided', () => {
+      expect(newShelter.storage).toBeDefined();
+      expect(newShelter.storage).toBeInstanceOf(Array);
+      expect(newShelter.storage.length).toEqual(0);
+    });
   });
 
+  describe('dequeue', () => {
 
+    it('Should remove the oldest specified animal from the queue', () => {
+      newShelter.enqueue('cat');
+      newShelter.enqueue('dog');
+      newShelter.enqueue('cat');
+      let popped = newShelter.dequeue('dog');
+      expect(popped).toEqual({name:'dog'});
+      expect(newShelter).toBeDefined();
+      expect(newShelter).toBeInstanceOf(AnimalShelter);
+      expect(newShelter.storage.length).toEqual(2);
+    });
+
+    it('Should not remove any other animal', () => {
+      newShelter.enqueue('cat');
+      newShelter.enqueue('dog');
+      newShelter.enqueue('cat');
+      newShelter.dequeue('dog');
+      expect(newShelter.storage[0].name).toEqual('cat');
+      expect(newShelter.storage[1].name).toEqual('cat');
+    });
+  });
 });
-
