@@ -42,3 +42,5 @@ Data Structures and Algorithms repo for 301 and 401
 * [queue-with-stacks](./code-challenges/401/queueWithStacks)
 
 * [fifo-animal-shelter](./code-challenges/401/fifoAnimalShelter)
+
+* [multi-bracket-validation](./code-challenges/401/multiBracketValidation)
