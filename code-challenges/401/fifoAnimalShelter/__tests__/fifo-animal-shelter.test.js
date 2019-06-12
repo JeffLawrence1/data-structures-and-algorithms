@@ -37,6 +37,10 @@ describe('Animal Shelter', () => {
       expect(newShelter.storage).toBeInstanceOf(Array);
       expect(newShelter.storage.length).toEqual(0);
     });
+
+    it('Should return must be cat or dog if the name input is something else', () => {
+      expect(newShelter.enqueue('rabbit')).toEqual('must be cat or dog');
+    });
   });
 
   describe('dequeue', () => {
@@ -59,6 +63,10 @@ describe('Animal Shelter', () => {
       newShelter.dequeue('dog');
       expect(newShelter.storage[0].name).toEqual('cat');
       expect(newShelter.storage[1].name).toEqual('cat');
+    });
+
+    it('Should return undefined if no parameter given', () => {
+      expect(newShelter.dequeue()).toBeUndefined();
     });
   });
 });
