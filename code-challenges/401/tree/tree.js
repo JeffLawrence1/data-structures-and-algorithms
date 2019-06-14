@@ -14,7 +14,24 @@ class BinarySearchTree {
   }
 
   preOrder(){
+    let results = [];
 
+    let _walk = node => {
+      // Root L R
+
+      //Root
+      results.push(node.value);
+      //Left
+      if(node.left){
+        _walk(node.left);
+      }
+      //Right
+      if(node.right){
+        _walk(node.right);
+      }
+    };
+    _walk(this.root);
+    return results;
   }
 
   inOrder(){
@@ -35,6 +52,27 @@ class BinarySearchTree {
       if(node.right){
         _walk(node.right);
       }
+    };
+    _walk(this.root);
+    return results;
+  }
+
+  postOrder(){
+    let results = [];
+
+    let _walk = node => {
+      // L R Root
+
+      //Left
+      if(node.left){
+        _walk(node.left);
+      }
+      //Right
+      if(node.right){
+        _walk(node.right);
+      }
+      //Root
+      results.push(node.value);
     };
     _walk(this.root);
     return results;
