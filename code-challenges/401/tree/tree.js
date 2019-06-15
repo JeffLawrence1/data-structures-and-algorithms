@@ -9,7 +9,8 @@ class Node {
 }
 
 class BinaryTree {
-  constructor(){
+  constructor(node){
+    this.root = node;
   }
   preOrder(){
     let results = [];
@@ -77,9 +78,9 @@ class BinaryTree {
   }
 }
 
-class BinarySearchTree {
-  constructor(node){
-    this.root = node;
+class BinarySearchTree extends BinaryTree{
+  constructor(){
+    super();
   }
 
 
