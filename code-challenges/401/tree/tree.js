@@ -83,7 +83,6 @@ class BinarySearchTree extends BinaryTree{
     super();
   }
 
-
   add(node){
     if(!this.root){
       this.root = node;
@@ -111,6 +110,14 @@ class BinarySearchTree extends BinaryTree{
         //duplicate node values
         throw new Error('value already exists in binary search tree');
       }
+    }
+  }
+
+  contains(val){
+    if(super.preOrder().includes(val)){
+      return true;
+    }else{
+      return false;
     }
   }
 
