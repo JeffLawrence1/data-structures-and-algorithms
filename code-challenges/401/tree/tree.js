@@ -8,16 +8,14 @@ class Node {
   }
 }
 
-class BinarySearchTree {
-  constructor(node){
-    this.root = node;
+class BinaryTree {
+  constructor(){
   }
-
   preOrder(){
     let results = [];
 
     let _walk = node => {
-      // Root L R
+    // Root L R
 
       //Root
       results.push(node.value);
@@ -38,7 +36,7 @@ class BinarySearchTree {
     let results = [];
 
     let _walk = node => {
-      // L Root R
+    // L Root R
 
       //Left
       if(node.left){
@@ -61,7 +59,7 @@ class BinarySearchTree {
     let results = [];
 
     let _walk = node => {
-      // L R Root
+    // L R Root
 
       //Left
       if(node.left){
@@ -77,6 +75,13 @@ class BinarySearchTree {
     _walk(this.root);
     return results;
   }
+}
+
+class BinarySearchTree {
+  constructor(node){
+    this.root = node;
+  }
+
 
   add(node){
     if(!this.root){
