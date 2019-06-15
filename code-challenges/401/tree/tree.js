@@ -79,8 +79,8 @@ class BinaryTree {
 }
 
 class BinarySearchTree extends BinaryTree{
-  constructor(){
-    super();
+  constructor(node){
+    super(node);
   }
 
   add(node){
@@ -123,4 +123,4 @@ class BinarySearchTree extends BinaryTree{
 
 }
 
-module.exports = Node, BinarySearchTree;
+module.exports = {Node, BinaryTree, BinarySearchTree};
