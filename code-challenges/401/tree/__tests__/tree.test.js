@@ -69,9 +69,10 @@ describe('Binary Tree Tests', () => {
   });
 
   it('Can successfully return a collection from an inorder traversal', () => {
-    expect(tree).toBeDefined();
-    expect(tree).toBeInstanceOf(trees.BinaryTree);
-    expect(tree.root).toBeDefined();
+    let testPre = tree.inOrder();
+    expect(testPre).toBeDefined();
+    expect(testPre).toHaveLength(7);
+    expect(testPre).toEqual([2, 10, 22, 20, 33, 25, 48]);
   });
 
   it('Can successfully return a collection from a postorder traversal', () => {
