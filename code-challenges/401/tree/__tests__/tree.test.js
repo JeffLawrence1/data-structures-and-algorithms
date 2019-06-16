@@ -12,7 +12,7 @@ const trees = require('../tree');
 describe('Binary Tree Tests', () => {
   let tree;
   beforeEach(() => {
-    tree = new trees.BinaryTree();
+
     //root
     let root = new trees.Node(20);
     let ten = new trees.Node(10);
@@ -22,35 +22,49 @@ describe('Binary Tree Tests', () => {
     let thirtyThree = new trees.Node(33);
     let fortyEight = new trees.Node(48);
 
-    tree.root = root;
-    tree.root.left = ten;
-    tree.root.right = twentyFive;
+    root.left = ten;
+    root.right = twentyFive;
     ten.left = two;
     ten.right = twentyTwo;
     twentyFive.left = thirtyThree;
     twentyFive.right = fortyEight;
+
+    tree = new trees.BinaryTree(root);
   });
 
   it('Can successfully instantiate an empty tree', () => {
-    expect(tree).toBeDefined();
-    expect(tree).toBeInstanceOf(trees.BinaryTree);
+    let treeTest = new trees.BinaryTree();
+    expect(treeTest).toBeDefined();
+    expect(treeTest).toBeInstanceOf(trees.BinaryTree);
   });
 
   it('an successfully instantiate a tree with a single root node', () => {
-    expect(tree).toBeDefined();
-    expect(tree).toBeInstanceOf(trees.BinaryTree);
-    expect(tree.root).toBeDefined();
+    let singleRoot = new trees.Node(3);
+    let treeTestTwo = new trees.BinaryTree(singleRoot);
+    expect(treeTestTwo).toBeDefined();
+    expect(treeTestTwo).toBeInstanceOf(trees.BinaryTree);
+    expect(treeTestTwo.root).toBeDefined();
+    expect(treeTestTwo.root.value).toBe(3);
   });
 
   it('Can successfully add a left child and right child to a single root node', () => {
-    expect(tree).toBeDefined();
-    expect(tree).toBeInstanceOf(trees.BinaryTree);
-    expect(tree.root).toBeDefined();
+    let singleRoot2 = new trees.Node(10);
+    let leftNode = new trees.Node(5);
+    let rightNode = new trees.Node(15);
+    let treeTestThree = new trees.BinarySearchTree(singleRoot2);
+    treeTestThree.add(leftNode);
+    treeTestThree.add(rightNode);
+    expect(treeTestThree).toBeDefined();
+    expect(treeTestThree).toBeInstanceOf(trees.BinarySearchTree);
+    expect(treeTestThree.root.value).toBe(10);
+    expect(treeTestThree.root.left.value).toBe(5);
+    expect(treeTestThree.root.right.value).toBe(15);
   });
 
   it('Can successfully return a collection from a preorder traversal', () => {
-    expect(tree).toBeDefined();
-    expect(tree).toBeInstanceOf(trees.BinaryTree);
+    let testPre = tree.preOrder();
+    expect(testPre).toBeDefined();
+    expect(testPre).toHaveLength(7);
     expect(tree.root).toBeDefined();
   });
 
