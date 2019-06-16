@@ -65,7 +65,7 @@ describe('Binary Tree Tests', () => {
     let testPre = tree.preOrder();
     expect(testPre).toBeDefined();
     expect(testPre).toHaveLength(7);
-    expect(tree.root).toBeDefined();
+    expect(testPre).toEqual([20, 10, 2, 22, 25, 33, 48]);
   });
 
   it('Can successfully return a collection from an inorder traversal', () => {
