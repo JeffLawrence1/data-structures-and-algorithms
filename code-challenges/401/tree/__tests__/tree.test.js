@@ -14,19 +14,21 @@ describe('Binary Tree Tests', () => {
   beforeEach(() => {
     tree = new trees.BinaryTree();
     //root
-    tree.root = {value: 20, left: null, right: null};
-    //root.left
-    tree.root.left = {value: 10, left: null, right: null};
-    //root.left.left
-    tree.root.left.left = {value: 2, left: null, right: null};
-    //root.left.right
-    tree.root.left.right = {value: 2, left: null, right: null};
-    //root.right
-    tree.root.right = {value: 25, left: null, right: null};
-    //root.right.right
-    tree.root.right.right = {value: 48, left: null, right: null};
-    //root.right.left
-    tree.root.right.left = {value: 33, left: null, right: null};
+    let root = new trees.Node(20);
+    let ten = new trees.Node(10);
+    let twentyFive = new trees.Node(25);
+    let two = new trees.Node(2);
+    let twentyTwo = new trees.Node(22);
+    let thirtyThree = new trees.Node(33);
+    let fortyEight = new trees.Node(48);
+
+    tree.root = root;
+    tree.root.left = ten;
+    tree.root.right = twentyFive;
+    ten.left = two;
+    ten.right = twentyTwo;
+    twentyFive.left = thirtyThree;
+    twentyFive.right = fortyEight;
   });
 
   it('Can successfully instantiate an empty tree', () => {
@@ -59,6 +61,12 @@ describe('Binary Tree Tests', () => {
   });
 
   it('Can successfully return a collection from a postorder traversal', () => {
+    expect(tree).toBeDefined();
+    expect(tree).toBeInstanceOf(trees.BinaryTree);
+    expect(tree.root).toBeDefined();
+  });
+
+  it('Contains method working', () => {
     expect(tree).toBeDefined();
     expect(tree).toBeInstanceOf(trees.BinaryTree);
     expect(tree.root).toBeDefined();
