@@ -11,6 +11,7 @@ const trees = require('../tree');
 
 describe('Binary Tree Tests', () => {
   let tree;
+  let tree2;
   beforeEach(() => {
 
     //root
@@ -30,6 +31,7 @@ describe('Binary Tree Tests', () => {
     twentyFive.right = fortyEight;
 
     tree = new trees.BinaryTree(root);
+    tree2 = new trees.BinarySearchTree(root);
   });
 
   it('Can successfully instantiate an empty tree', () => {
@@ -83,8 +85,9 @@ describe('Binary Tree Tests', () => {
   });
 
   it('Contains method working', () => {
-    expect(tree).toBeDefined();
-    expect(tree).toBeInstanceOf(trees.BinaryTree);
-    expect(tree.root).toBeDefined();
+    expect(tree2).toBeDefined();
+    expect(tree2).toBeInstanceOf(trees.BinarySearchTree);
+    expect(tree2.contains(22)).toBeTruthy();
+    expect(tree2.contains(223)).toBeFalsy();
   });
 });
