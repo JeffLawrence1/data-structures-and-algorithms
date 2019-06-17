@@ -46,3 +46,5 @@ Data Structures and Algorithms repo for 301 and 401
 * [multi-bracket-validation](./code-challenges/401/multiBracketValidation)
 
 * [tree](./code-challenges/401/tree)
+
+* [fizz-buzz-tree](./code-challenges/401/fizzBuzzTree)
