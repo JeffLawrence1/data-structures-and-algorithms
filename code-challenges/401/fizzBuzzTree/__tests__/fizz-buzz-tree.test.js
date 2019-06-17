@@ -47,45 +47,24 @@ describe('fizz buzz tree test', () => {
     expect(tree.root.left.left.value).toBe('fizz');
   });
 
-  // it('Can successfully add a left child and right child to a single root node', () => {
-  //   let singleRoot2 = new trees.Node(10);
-  //   let leftNode = new trees.Node(5);
-  //   let rightNode = new trees.Node(15);
-  //   let treeTestThree = new trees.BinarySearchTree(singleRoot2);
-  //   treeTestThree.add(leftNode);
-  //   treeTestThree.add(rightNode);
-  //   expect(treeTestThree).toBeDefined();
-  //   expect(treeTestThree).toBeInstanceOf(trees.BinarySearchTree);
-  //   expect(treeTestThree.root.value).toBe(10);
-  //   expect(treeTestThree.root.left.value).toBe(5);
-  //   expect(treeTestThree.root.right.value).toBe(15);
-  // });
+  it('Can successfully change root divisible by 5 to buzz', () => {
 
-  // it('Can successfully return a collection from a preorder traversal', () => {
-  //   let testPre = tree.preOrder();
-  //   expect(testPre).toBeDefined();
-  //   expect(testPre).toHaveLength(7);
-  //   expect(testPre).toEqual([20, 10, 2, 22, 25, 33, 48]);
-  // });
+    fizzBuzzTree(tree);
+    expect(tree.root).toBeDefined();
+    expect(tree.root.value).toBe('buzz');
+  });
 
-  // it('Can successfully return a collection from an inorder traversal', () => {
-  //   let testPre = tree.inOrder();
-  //   expect(testPre).toBeDefined();
-  //   expect(testPre).toHaveLength(7);
-  //   expect(testPre).toEqual([2, 10, 22, 20, 33, 25, 48]);
-  // });
+  it('Can successfully change divisible by 3 and 5 to fizzbuzz', () => {
 
-  // it('Can successfully return a collection from a postorder traversal', () => {
-  //   let testPre = tree.postOrder();
-  //   expect(testPre).toBeDefined();
-  //   expect(testPre).toHaveLength(7);
-  //   expect(testPre).toEqual([2, 22, 10, 33, 48, 25, 20]);
-  // });
+    fizzBuzzTree(tree);
+    expect(tree.root.right).toBeDefined();
+    expect(tree.root.right.value).toBe('fizzbuzz');
+  });
 
-  // it('Contains method working', () => {
-  //   expect(tree2).toBeDefined();
-  //   expect(tree2).toBeInstanceOf(trees.BinarySearchTree);
-  //   expect(tree2.contains(22)).toBeTruthy();
-  //   expect(tree2.contains(223)).toBeFalsy();
-  // });
+  it('Will not change if not divisible by 3 and 5', () => {
+
+    fizzBuzzTree(tree);
+    expect(tree.root.left.right).toBeDefined();
+    expect(tree.root.left.right.value).toBe(22);
+  });
 });
