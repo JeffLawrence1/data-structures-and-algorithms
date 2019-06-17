@@ -15,6 +15,19 @@ function fizzBuzzTree(tree){
   return tree;
 }
 
-
+function fizzChecker(node){
+  if(node.value % 3 === 0 && node.value % 5 === 0){
+    node.value = 'fizzbuzz';
+  }
+  else if(node.value % 3 === 0){
+    node.value = 'fizz';
+  }
+  else if(node.value % 5 === 0){
+    node.value = 'buzz';
+  }
+  else{
+    return;
+  }
+}
 
 module.exports = fizzBuzzTree;
