@@ -12,7 +12,7 @@ const fizzBuzzTree = require('../fizz-buzz-tree.js');
 
 describe('fizz buzz tree test', () => {
   let tree;
-
+  // let root;
   beforeEach(() => {
 
     //root
@@ -41,6 +41,9 @@ describe('fizz buzz tree test', () => {
   });
 
   it('Can successfully change divisible by 3 to fizz', () => {
+    console.log(tree);
+    console.log(tree.root);
+    // console.log(fizzBuzzTree(root));
     fizzBuzzTree(tree);
     expect(tree.left.left).toBeDefined();
     expect(tree.left.left).toBe('fizz');

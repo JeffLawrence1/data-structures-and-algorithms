@@ -1,14 +1,14 @@
 'use strict';
 
 function fizzBuzzTree(tree){
+  if (typeof tree !== 'object' || !tree.root.value) return 'Not a valid tree';
   let _walk = (node) => {
     if(node.left){
       _walk(node.left);
-      fizzChecker(node);
     }
+    fizzChecker(node);
     if(node.right){
       _walk(node.right);
-      fizzChecker(node);
     }
   };
   _walk(this.root);
