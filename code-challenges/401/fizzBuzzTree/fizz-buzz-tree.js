@@ -11,7 +11,7 @@ function fizzBuzzTree(tree){
       _walk(node.right);
     }
   };
-  _walk(this.root);
+  _walk(tree.root);
   return tree;
 }
 

@@ -41,12 +41,10 @@ describe('fizz buzz tree test', () => {
   });
 
   it('Can successfully change divisible by 3 to fizz', () => {
-    console.log(tree);
-    console.log(tree.root);
-    // console.log(fizzBuzzTree(root));
+
     fizzBuzzTree(tree);
-    expect(tree.left.left).toBeDefined();
-    expect(tree.left.left).toBe('fizz');
+    expect(tree.root.left.left).toBeDefined();
+    expect(tree.root.left.left.value).toBe('fizz');
   });
 
   // it('Can successfully add a left child and right child to a single root node', () => {
