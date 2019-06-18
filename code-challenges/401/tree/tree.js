@@ -78,6 +78,9 @@ class BinaryTree {
   }
 
   breadthFirst(tree){
+    if(tree === null || tree === undefined){
+      return 'error';
+    }
     let storage = [tree.root];
     let current = storage.shift();
     while(current){

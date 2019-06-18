@@ -107,5 +107,11 @@ describe('Binary Tree Tests', () => {
       tree.breadthFirst(tree);
       expect(tree3).toEqual(tree);
     });
+
+    it('should return an error string if no tree is null or undefined', () => {
+
+      expect(tree.breadthFirst(null)).toBe('error');
+      expect(tree.breadthFirst(undefined)).toBe('error');
+    });
   });
 });
