@@ -76,6 +76,23 @@ class BinaryTree {
     _walk(this.root);
     return results;
   }
+
+  breadthFirst(tree){
+    let current = [tree];
+    while(current.length > 0){
+      let next = [];
+      for(let node of current){
+        console.log(node.value);
+        if(node.left){
+          next.push(node);
+        }
+        if(node.right){
+          next.push(node);
+        }
+      }
+      current = next;
+    }
+  }
 }
 
 class BinarySearchTree extends BinaryTree{
