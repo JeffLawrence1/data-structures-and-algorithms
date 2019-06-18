@@ -78,19 +78,13 @@ class BinaryTree {
   }
 
   breadthFirst(tree){
-    let current = [tree];
-    while(current.length > 0){
-      let next = [];
-      for(let node of current){
-        console.log(node.value);
-        if(node.left){
-          next.push(node);
-        }
-        if(node.right){
-          next.push(node);
-        }
-      }
-      current = next;
+    let storage = [tree.root];
+    let current = storage.shift();
+    while(current){
+      console.log(current.value);
+      storage.push(current.left);
+      storage.push(current.right);
+      current = storage.shift();
     }
   }
 }

@@ -12,7 +12,7 @@ const trees = require('../tree');
 describe('Binary Tree Tests', () => {
   let tree;
   let tree2;
-  let tree3;
+
   beforeEach(() => {
 
     //root
@@ -33,7 +33,7 @@ describe('Binary Tree Tests', () => {
 
     tree = new trees.BinaryTree(root);
     tree2 = new trees.BinarySearchTree(root);
-    tree3 = new trees.BinaryTree(root);
+
   });
 
   it('Can successfully instantiate an empty tree', () => {
@@ -96,7 +96,7 @@ describe('Binary Tree Tests', () => {
   describe('breadthFirst tests', () => {
     it('can successfully console log', () => {
       let spy = jest.spyOn(console, 'log');
-      tree.breadthFirst(tree3);
+      tree.breadthFirst(tree);
       expect(spy).toHaveBeenCalled();
       spy.mockRestore();
     });
