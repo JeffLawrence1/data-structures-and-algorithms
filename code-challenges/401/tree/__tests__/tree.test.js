@@ -12,6 +12,7 @@ const trees = require('../tree');
 describe('Binary Tree Tests', () => {
   let tree;
   let tree2;
+  let tree3;
 
   beforeEach(() => {
 
@@ -33,6 +34,7 @@ describe('Binary Tree Tests', () => {
 
     tree = new trees.BinaryTree(root);
     tree2 = new trees.BinarySearchTree(root);
+    tree3 = new trees.BinaryTree(root);
 
   });
 
@@ -99,6 +101,11 @@ describe('Binary Tree Tests', () => {
       tree.breadthFirst(tree);
       expect(spy).toHaveBeenCalled();
       spy.mockRestore();
+    });
+
+    it('should not modify the tree', () => {
+      tree.breadthFirst(tree);
+      expect(tree3).toEqual(tree);
     });
   });
 });
