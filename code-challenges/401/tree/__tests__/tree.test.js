@@ -116,9 +116,20 @@ describe('Binary Tree Tests', () => {
   });
 
   describe('findMaximumValue tests', () => {
+
     it('should not modify the tree', () => {
       tree.findMaximumValue(tree);
       expect(tree3).toEqual(tree);
     });
+
+    it('should return an error string if no tree is null or undefined', () => {
+      expect(tree.findMaximumValue(null)).toBe('error');
+      expect(tree.findMaximumValue(undefined)).toBe('error');
+    });
+
+    // it('should return an error string if no tree is null or undefined', () => {
+    //   expect(tree.findMaximumValue(null)).toBe('error');
+    //   expect(tree.findMaximumValue(undefined)).toBe('error');
+    // });
   });
 });
