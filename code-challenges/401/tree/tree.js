@@ -97,7 +97,8 @@ class BinarySearchTree extends BinaryTree{
     super(node);
   }
 
-  add(node){
+  add(val){
+    let node = new Node(val);
     if(!this.root){
       this.root = node;
       return node;
