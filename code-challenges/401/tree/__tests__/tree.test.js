@@ -12,6 +12,8 @@ const trees = require('../tree');
 describe('Binary Tree Tests', () => {
   let tree;
   let tree2;
+  let tree3;
+
   beforeEach(() => {
 
     //root
@@ -32,6 +34,8 @@ describe('Binary Tree Tests', () => {
 
     tree = new trees.BinaryTree(root);
     tree2 = new trees.BinarySearchTree(root);
+    tree3 = new trees.BinaryTree(root);
+
   });
 
   it('Can successfully instantiate an empty tree', () => {
@@ -89,5 +93,25 @@ describe('Binary Tree Tests', () => {
     expect(tree2).toBeInstanceOf(trees.BinarySearchTree);
     expect(tree2.contains(22)).toBeTruthy();
     expect(tree2.contains(223)).toBeFalsy();
+  });
+
+  describe('breadthFirst tests', () => {
+    it('can successfully console log', () => {
+      let spy = jest.spyOn(console, 'log');
+      tree.breadthFirst(tree);
+      expect(spy).toHaveBeenCalled();
+      spy.mockRestore();
+    });
+
+    it('should not modify the tree', () => {
+      tree.breadthFirst(tree);
+      expect(tree3).toEqual(tree);
+    });
+
+    it('should return an error string if no tree is null or undefined', () => {
+
+      expect(tree.breadthFirst(null)).toBe('error');
+      expect(tree.breadthFirst(undefined)).toBe('error');
+    });
   });
 });
