@@ -55,11 +55,11 @@ describe('Binary Tree Tests', () => {
 
   it('Can successfully add a left child and right child to a single root node', () => {
     let singleRoot2 = new trees.Node(10);
-    let leftNode = new trees.Node(5);
-    let rightNode = new trees.Node(15);
+    // let leftNode = new trees.Node(5);
+    // let rightNode = new trees.Node(15);
     let treeTestThree = new trees.BinarySearchTree(singleRoot2);
-    treeTestThree.add(leftNode);
-    treeTestThree.add(rightNode);
+    treeTestThree.add(5);
+    treeTestThree.add(15);
     expect(treeTestThree).toBeDefined();
     expect(treeTestThree).toBeInstanceOf(trees.BinarySearchTree);
     expect(treeTestThree.root.value).toBe(10);
