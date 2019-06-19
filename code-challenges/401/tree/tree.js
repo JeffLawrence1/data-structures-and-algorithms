@@ -101,8 +101,12 @@ class BinaryTree {
       if(max < node.value){
         max = node.value;
       }
-      if(node)
-    }
+      if(node.right){
+        _walk(node.right);
+      }
+    };
+    _walk(tree.root);
+    return max;
   }
 }
 
