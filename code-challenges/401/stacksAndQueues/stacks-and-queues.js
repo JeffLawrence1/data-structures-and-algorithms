@@ -20,7 +20,9 @@ class Stack {
   }
 
   pop(){
+    let temp = this.top;
     this.top = this.top.next;
+    return temp;
   }
 
   peek() {
