@@ -25,6 +25,7 @@ describe('Binary Tree Tests', () => {
     let thirtyThree = new trees.Node(33);
     let fortyEight = new trees.Node(48);
 
+
     root.left = ten;
     root.right = twentyFive;
     ten.left = two;
