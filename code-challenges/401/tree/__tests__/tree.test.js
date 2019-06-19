@@ -108,7 +108,7 @@ describe('Binary Tree Tests', () => {
       expect(tree3).toEqual(tree);
     });
 
-    it('should return an error string if no tree is null or undefined', () => {
+    it('should return an error string if tree is null or undefined', () => {
 
       expect(tree.breadthFirst(null)).toBe('error');
       expect(tree.breadthFirst(undefined)).toBe('error');
@@ -122,14 +122,13 @@ describe('Binary Tree Tests', () => {
       expect(tree3).toEqual(tree);
     });
 
-    it('should return an error string if no tree is null or undefined', () => {
+    it('should return an error string if tree is null or undefined', () => {
       expect(tree.findMaximumValue(null)).toBe('error');
       expect(tree.findMaximumValue(undefined)).toBe('error');
     });
 
-    // it('should return an error string if no tree is null or undefined', () => {
-    //   expect(tree.findMaximumValue(null)).toBe('error');
-    //   expect(tree.findMaximumValue(undefined)).toBe('error');
-    // });
+    it('should return the max value in a tree', () => {
+      expect(tree.findMaximumValue(tree)).toBe(48);
+    });
   });
 });
