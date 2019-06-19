@@ -20,7 +20,9 @@ class Stack {
   }
 
   pop(){
+    let temp = this.top;
     this.top = this.top.next;
+    return temp.val;
   }
 
   peek() {
@@ -53,7 +55,9 @@ class Queue{
   }
 
   dequeue(){
+    let temp = this.front;
     this.front = this.front.next;
+    return temp.val;
   }
 
   peek() {
