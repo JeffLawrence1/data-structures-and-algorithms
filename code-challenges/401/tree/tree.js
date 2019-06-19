@@ -90,6 +90,20 @@ class BinaryTree {
       current = storage.shift();
     }
   }
+
+  findMaximumValue(tree){
+    let max = tree.root.value;
+
+    let _walk = node => {
+      if(node.left){
+        _walk(node.left);
+      }
+      if(max < node.value){
+        max = node.value;
+      }
+      if(node)
+    }
+  }
 }
 
 class BinarySearchTree extends BinaryTree{

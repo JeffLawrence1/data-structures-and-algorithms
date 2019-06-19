@@ -2,14 +2,14 @@
 <!-- Short summary or background information -->
 create a binary tree class and a binary tree search class
 added breadFirst function to binary tree
-added find-maximum-value function to binary tree
+added findMaximumValue function to binary tree
 
 ## Challenge
 <!-- Description of the challenge -->
 create methods in the binary tree class called preOrder, postOrder and inOrder
 create methods in the binary search tree class called add and contains
 create method breadFirst search in binary tree
-create method find-maximum-value in binary tree that finds the max value
+create method findMaximumValue in binary tree that finds the max value
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -23,7 +23,7 @@ inOrder - recursive function
 
 breadthFirst - breadth first traversal
 
-find-maximum-value - recursive find max value function
+findMaximumValue - recursive find max value function
 
 add - binary search tree add node
 contains - binary search tree contains value
