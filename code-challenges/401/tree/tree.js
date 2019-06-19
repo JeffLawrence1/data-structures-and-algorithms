@@ -92,6 +92,9 @@ class BinaryTree {
   }
 
   findMaximumValue(tree){
+    if(tree === null || tree === undefined){
+      return 'error';
+    }
     let max = tree.root.value;
 
     let _walk = node => {

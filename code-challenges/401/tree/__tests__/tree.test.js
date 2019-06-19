@@ -114,4 +114,11 @@ describe('Binary Tree Tests', () => {
       expect(tree.breadthFirst(undefined)).toBe('error');
     });
   });
+
+  describe('findMaximumValue tests', () => {
+    it('should not modify the tree', () => {
+      tree.findMaximumValue(tree);
+      expect(tree3).toEqual(tree);
+    });
+  });
 });
