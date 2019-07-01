@@ -21,10 +21,15 @@ Students should have a basic understanding of implementation, see below, and whe
 ## Include your “Visual” here
 
 input -> [2, 4, 3, 5]
+
 iteration 1 ->[2, 4, 3, 5, 4]
+
 iteration 2 ->[2, 3, 4, 5, 4]
+
 iteration 3 ->[2, 3, 4, 5, 4]
+
 iteration 4 ->[2, 3, 4, 4, 5]
+
 output -> [2, 3, 4, 4, 5]
 
 ## Algorithm
@@ -102,14 +107,16 @@ function insertionSort(arr){
       arr[j + 1] <-- temp
 ```
 
-Readings and References
-Watch
+## Readings and References
+## Watch
 
-Video
-Read
+* [video](https://www.youtube.com/watch?v=i-SKeOcBwko)
 
-Article 1
-Article 2
-Bookmark
+## Read
 
-Website
+* [Reading](https://en.wikipedia.org/wiki/Insertion_sort)
+
+* [Reading](https://www.geeksforgeeks.org/insertion-sort/)
+
+## Bookmark
+* [Cheat Sheet](https://algs4.cs.princeton.edu/cheatsheet/)
