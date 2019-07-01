@@ -27,4 +27,18 @@ describe('Insertion Sort Tests', () => {
     }).toThrow('input not an array');
   });
 
+  it('it should only take an array of all numbers', () => {
+    let badStringArray = [1, 3, 4, 'thisshouldthrowanerror', 6];
+    expect(() => {
+      insertionSort(badStringArray);
+    }).toThrow('invalid data in array');
+  });
+
+  it('should still sort an array of only length 2', () => {
+    let testShort = [5, 2];
+    // Act
+    insertionSort(testShort);
+    // Assert
+    expect(testShort).toEqual([2, 5]);
+  });
 });
