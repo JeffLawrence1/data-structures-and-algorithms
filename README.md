@@ -48,3 +48,7 @@ Data Structures and Algorithms repo for 301 and 401
 * [tree](./code-challenges/401/tree)
 
 * [fizz-buzz-tree](./code-challenges/401/fizzBuzzTree)
+
+* [breadth_first](./code-challenges/401/tree)
+
+* [insertion-sort](./code-challenges/401/sorts/insertionSort)
