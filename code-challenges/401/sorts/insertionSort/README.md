@@ -13,3 +13,6 @@ I paid attention to the inclass demo, did some google research, a little plannin
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 insertionSort - takes in an array of numbers only and returns a sorted array smallest to largest
+
+## Answer Code
+* [code](./insertionSort.js)
