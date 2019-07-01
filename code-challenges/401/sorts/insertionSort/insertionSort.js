@@ -19,7 +19,6 @@ function insertionSort(arr){
     }
     arr[j + 1] = temp;
   }
-  // return arr;
 }
 
 module.exports = insertionSort;
