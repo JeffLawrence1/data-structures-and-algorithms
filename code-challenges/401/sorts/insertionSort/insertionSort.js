@@ -9,7 +9,7 @@ function insertionSort(arr){
 
     let j = i -1;
     let temp = arr[i];
-    if(typeof j !== 'number'){
+    if(typeof arr[j] !== 'number'){
       throw 'invalid data in array';
     }
 
