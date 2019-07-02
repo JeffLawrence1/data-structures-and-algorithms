@@ -52,3 +52,5 @@ Data Structures and Algorithms repo for 301 and 401
 * [breadth_first](./code-challenges/401/tree)
 
 * [insertion-sort](./code-challenges/401/sorts/insertionSort)
+
+* [merge-sort](./code-challenges/401/sorts/mergeSort)
