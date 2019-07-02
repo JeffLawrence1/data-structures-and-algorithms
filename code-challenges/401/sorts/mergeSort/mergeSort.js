@@ -1,6 +1,11 @@
 'use strict';
 
 function mergeSort(arr){
+
+  if(!Array.isArray(arr)){
+    throw 'input not an array';
+  }
+
   if (arr.length === 1) {
     return arr;
   }
@@ -20,6 +25,10 @@ function merge(left, right){
   let indexRight = 0;
 
   while(indexLeft < left.length && indexRight < right.length){
+    if(typeof left[indexLeft] !== 'number' || typeof right[indexRight] !== 'number'){
+      throw 'invalid data in array';
+    }
+
     if(left[indexLeft] < right[indexRight]){
       result.push(left[indexLeft]);
       indexLeft++;
