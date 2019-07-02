@@ -36,8 +36,8 @@ describe('Merge Sort Tests', () => {
   it('should still sort an array of only length 2', () => {
     let testShort = [5, 2];
     // Act
-    mergeSort(testShort);
+    let answer = mergeSort(testShort);
     // Assert
-    expect(testShort).toEqual([2, 5]);
+    expect(answer).toEqual([2, 5]);
   });
 });
