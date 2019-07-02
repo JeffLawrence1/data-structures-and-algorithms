@@ -132,30 +132,56 @@ function merge(left, right){
 
 #### Pseudocode
 ```
-  InsertionSort(int[] arr)
-  
-    FOR i = 1 to arr.length
-    
-      int j <-- i - 1
-      int temp <-- arr[i]
-      
-      WHILE j >= 0 AND temp < arr[j]
-        arr[j + 1] <-- arr[j]
-        j <-- j - 1
-        
-      arr[j + 1] <-- temp
+
+ALGORITHM Mergesort(arr)
+    DECLARE n <-- arr.length
+           
+    if arr.length > 1
+      DECLARE mid <-- n/2
+      DECLARE b <-- arr[0...mid]
+      DECLARE c <-- arr[mid...n]
+      // break down the left side
+      Mergesort(b)
+      // break down the right side
+      Mergesort(c)
+      // merge the left and the right side together
+      Merge(b, c, arr)
+
+ALGORITHM Merge(b, c, a)
+    DECLARE i <-- 0
+    DECLARE j <-- 0
+    DECLARE k <-- 0
+
+    while i < b && j < c
+        if b[i] <= c[j]
+            a[k] <-- b[i]
+            i <-- i + 1
+        else
+            a[k] = c[j]
+            j <-- j + 1
+            
+        k <-- k + 1
+
+    if i = b.length
+       add remaining items in array c to array a
+    else
+       add remaining items in array b to array a
+       
+    return a
+
 ```
 
 ## Readings and References
 ## Watch
 
-* [video](https://www.youtube.com/watch?v=i-SKeOcBwko)
+* [video](https://www.youtube.com/watch?v=TzeBrDU-JaY)
 
 ## Read
 
-* [Reading](https://en.wikipedia.org/wiki/Insertion_sort)
+* [Reading](https://en.wikipedia.org/wiki/Merge_sort)
 
-* [Reading](https://www.geeksforgeeks.org/insertion-sort/)
+* [Reading](https://www.geeksforgeeks.org/merge-sort/)
 
 ## Bookmark
-* [Cheat Sheet](https://algs4.cs.princeton.edu/cheatsheet/)
+* [Cheat Sheet](https://www.cheatography.com/pryl/cheat-sheets/sorting-algorithms/)
+* [Cheat Sheet](https://www.interviewcake.com/sorting-algorithm-cheat-sheet)
