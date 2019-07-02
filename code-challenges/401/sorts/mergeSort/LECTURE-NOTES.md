@@ -42,49 +42,91 @@ then add an if statement to make sure an array was passed in
     throw 'input not an array';
   }
 ```
-then create a for loop that will run down the length of the passed in array, also create a variable for the previous positioned number and a temp variable to hold a copy of the current position number.
-Lastly create another if statement to check each position to insure they are in fact numbers.
+then add another if statement to make sure that the recursion stops when the arrays get down to a length of 1
 ```
-  for(let i = 1; i < arr.length; i++){
+  if (arr.length === 1) {
+    return arr;
+  }
+```
+then create another if statement that will create a midpoint, left half and right half from the array and then call another function, merge using recursion
+```
+  if(arr.length > 1){
+    let mid = Math.floor(arr.length / 2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
 
-    let j = i -1;
-    let temp = arr[i];
-    if(typeof arr[j] !== 'number'){
+    return merge(mergeSort(left),mergeSort(right));
+  }
+```
+next create the merge function, this will take the chopped up original array and put it in the correct order, start by declaring the function and the variables you will need
+```
+function merge(left, right){
+  let result = [];
+  let indexLeft = 0;
+  let indexRight = 0;
+```
+then create a while loop that will run while the index of the left or right is less than the amount of items in the left and right arrays you passed in.  also check to make sure that each item is actually a number while you run through them.
+```
+      while(indexLeft < left.length && indexRight < right.length){
+    if(typeof left[indexLeft] !== 'number' || typeof right[indexRight] !== 'number'){
       throw 'invalid data in array';
     }
 ```
-next create a while loop inside the for loop that will compare each number to its previous and switch them if necessary
+then using if statements compare the digits and push them into your results array in the correct order
 ```
-    while(j >= 0 && temp < arr[j]){
-      arr[j + 1] = arr[j];
-      j = j -1;
+    if(left[indexLeft] < right[indexRight]){
+      result.push(left[indexLeft]);
+      indexLeft++;
+    }else{
+      result.push(right[indexRight]);
+      indexRight++;
     }
 ```
-lastly reassign the number in position j+1 or what is actually i to temp
+lastly combine the results back together and return them
 ```
-    arr[j + 1] = temp;
+  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 ```
-the whole thing put together looks like
+
+The whole thing put together looks like this
 ```
-function insertionSort(arr){
+function mergeSort(arr){
 
   if(!Array.isArray(arr)){
     throw 'input not an array';
   }
-  for(let i = 1; i < arr.length; i++){
 
-    let j = i -1;
-    let temp = arr[i];
-    if(typeof arr[j] !== 'number'){
+  if (arr.length === 1) {
+    return arr;
+  }
+
+  if(arr.length > 1){
+    let mid = Math.floor(arr.length / 2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+
+    return merge(mergeSort(left),mergeSort(right));
+  }
+}
+
+function merge(left, right){
+  let result = [];
+  let indexLeft = 0;
+  let indexRight = 0;
+
+  while(indexLeft < left.length && indexRight < right.length){
+    if(typeof left[indexLeft] !== 'number' || typeof right[indexRight] !== 'number'){
       throw 'invalid data in array';
     }
 
-    while(j >= 0 && temp < arr[j]){
-      arr[j + 1] = arr[j];
-      j = j -1;
+    if(left[indexLeft] < right[indexRight]){
+      result.push(left[indexLeft]);
+      indexLeft++;
+    }else{
+      result.push(right[indexRight]);
+      indexRight++;
     }
-    arr[j + 1] = temp;
   }
+  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 }
 ```
 
