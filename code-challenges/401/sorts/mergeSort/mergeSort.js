@@ -1,41 +1,34 @@
 'use strict';
 
 function mergeSort(arr){
-  let n = arr.length;
+  if (arr.length === 1) {
+    return arr;
+  }
+
   if(arr.length > 1){
-    let mid = n / 2;
-    let b = arr.slice(0, mid);
-    let c = arr.slice(mid);
-    // break down the left side
-    mergeSort(b);
-    // break down the right side
-    mergeSort(c);
-    // merge the left and the right side together
-    merge(b, c, arr);
+    let mid = Math.floor(arr.length / 2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+
+    return merge(mergeSort(left),mergeSort(right));
   }
 }
 
-function merge(b, c, a){
-  let i = 0;
-  let j = 0;
-  let k = 0;
+function merge(left, right){
+  let result = [];
+  let indexLeft = 0;
+  let indexRight = 0;
 
-  while(i < b && j < c){
-    if(b[i] <= c[j]){
-      a[k] = b[i];
-      i = i + 1;
+  while(indexLeft < left.length && indexRight < right.length){
+    if(left[indexLeft] < right[indexRight]){
+      result.push(left[indexLeft]);
+      indexLeft++;
     }else{
-      a[k] = b[i];
-      j = j + 1;
+      result.push(right[indexRight]);
+      indexRight++;
     }
-    k = k + 1;
   }
-  if(i === b.length){
-    a.concat(c);
-  }else{
-    a.concat(b);
-  }
-  return a;
+  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 }
 
 module.exports = mergeSort;
