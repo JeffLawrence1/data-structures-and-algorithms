@@ -1,41 +1,38 @@
-#### Lecture Notes: Insertion Sort
+#### Lecture Notes: Merge Sort
 
 ## Brief description of what this algorithm is, does, and why we care.
 
-Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time.  It is simple to implement, efficient for small data sets, and stable(doesn't change to order of same numbers).
+Merge sort is an efficient, general-purpose, comparison-based sorting algorithm. Implementations produce a stable sort, which means that the order of equal elements is the same in the input and output. Merge sort is a divide and conquer algorithm.
 
 ## Is it more efficient than others? How does it attack the problem differently?
 
-It is generally less efficient than other sorting methods when using larger data sets.  However for smaller data sets it has several advantages which are the ease of implementation, it is stable and can often be done in place(using one array).  For smaller data sets only, the larger they are the worse it becomes.
+It is more efficient than insertion sort especially when using larger data sets.  However for very small data sets it can be surpassed, very small only.  For larger data sets it is considerably more efficient.
 
 ## Learning Objectives
-Today students will learn how insertion sort works.  
+Today students will learn how merge sort works.  
 
-Insertion sort is a relatively simple type of sort to implement.  
+Merge sort is a not relatively simple as it relies on recursion and multiple functions however it is much more efficient than insertion sort.  
 
-Its best case scenario is if the data structure to sort is already mostly sorted.  
-The worst case is if it is not sorted at all which forces the inner loop to scan and shift all elements every iteration.
+Its best case and worst case scenarios all result in a Big O of O(n log(n)).
 
-Students should have a basic understanding of implementation, see below, and when to use, essentially only on small data sets.
+Students should have a basic understanding of implementation, see below, and when to use, which is anything larger than miniscule.
 
 ## Include your “Visual” here
 
-input -> [2, 4, 3, 5]
+input -> [2, 4, 3, 5, 4]
 
-iteration 1 ->[2, 4, 3, 5, 4]
+iteration 1 ->[2, 4], [3, 5, 4]
 
-iteration 2 ->[2, 3, 4, 5, 4]
+iteration 2 ->[2], [4], [3], [5, 4]
 
-iteration 3 ->[2, 3, 4, 5, 4]
-
-iteration 4 ->[2, 3, 4, 4, 5]
+iteration 3 ->[2], [4], [3], [5], [4]
 
 output -> [2, 3, 4, 4, 5]
 
 ## Algorithm
 Start with creating a function and passing in an array
 ```
-function insertionSort(arr){
+function mergeSort(arr){
 
 }
 ```
