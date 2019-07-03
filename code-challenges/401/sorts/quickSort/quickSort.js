@@ -7,6 +7,10 @@ function quickSort(arr, left, right){
   }
 
   if(left < right){
+
+    if(typeof arr[left] !== 'number' || typeof arr[right] !== 'number'){
+      throw 'invalid data in array';
+    }
     // Partition the array by setting the position of the pivot value
     let position = partition(arr, left, right);
     // Sort the left
@@ -23,9 +27,7 @@ function partition(arr, left, right){
   // create a variable to track the largest index of numbers lower than the defined pivot
   let low = left - 1;
   for( let i = left; i <= right - 1; i++){
-    if(typeof arr[i] !== 'number'){
-      throw 'invalid data in array';
-    }
+
     if(arr[i] <= pivot){
       low++;
       swap(arr, i, low);
@@ -39,6 +41,7 @@ function partition(arr, left, right){
 }
 
 function swap(arr, leftIndex, rightIndex){
+
   let temp = arr[leftIndex];
   arr[leftIndex] = arr[rightIndex];
   arr[rightIndex] = temp;

@@ -27,16 +27,16 @@ describe('Quick Sort Tests', () => {
   });
 
   it('it should only take an array of all numbers', () => {
-    let badStringArray = [1, 3, 4, 'thisshouldthrowanerror', 6];
+    let badStringArray = [1, 3, 4, 'thisshouldthrowanerror', 6, 2];
     expect(() => {
-      quickSort(badStringArray, 0, badStringArray - 1);
+      quickSort(badStringArray, 0, badStringArray.length - 1);
     }).toThrow('invalid data in array');
   });
 
   it('should still sort an array of only length 2', () => {
     let testShort = [5, 2];
     // Act
-    let answer = mergeSort(testShort);
+    let answer = quickSort(testShort, 0, 2);
     // Assert
     expect(answer).toEqual([2, 5]);
   });
