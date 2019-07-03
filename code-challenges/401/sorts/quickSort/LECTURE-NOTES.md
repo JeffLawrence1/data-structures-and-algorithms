@@ -179,14 +179,14 @@ ALGORITHM Swap(arr, i, low)
 ## Readings and References
 ## Watch
 
-* [video](https://www.youtube.com/watch?v=TzeBrDU-JaY)
+* [video](https://www.youtube.com/watch?v=COk73cpQbFQ)
 
 ## Read
 
-* [Reading](https://en.wikipedia.org/wiki/Merge_sort)
+* [Reading](https://www.guru99.com/quicksort-in-javascript.html)
 
-* [Reading](https://www.geeksforgeeks.org/merge-sort/)
+* [Reading](https://reactgo.com/quicksort-algorithm-javascript/)
 
 ## Bookmark
+* [Cheat Sheet](https://algs4.cs.princeton.edu/cheatsheet/)
 * [Cheat Sheet](https://www.cheatography.com/pryl/cheat-sheets/sorting-algorithms/)
-* [Cheat Sheet](https://www.interviewcake.com/sorting-algorithm-cheat-sheet)
