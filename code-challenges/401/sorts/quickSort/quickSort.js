@@ -6,6 +6,7 @@ function quickSort(arr, left, right){
     let position = partition(arr, left, right);
     // Sort the left
     quickSort(arr, left, position - 1);
+    
     // Sort the right
     quickSort(arr, position + 1, right);
   }
@@ -16,7 +17,7 @@ function partition(arr, left, right){
   let pivot = arr[right];
   // create a variable to track the largest index of numbers lower than the defined pivot
   let low = left - 1;
-  for( let i = left; i <= right; i++){
+  for( let i = left; i <= right - 1; i++){
     if(arr[i] <= pivot){
       low++;
       swap(arr, i, low);
@@ -29,9 +30,8 @@ function partition(arr, left, right){
   return low + 1;
 }
 
-function swap(arr, i, low){
-  let temp;
-  temp = arr[i];
-  arr[i] = arr[low];
-  arr[low] = temp;
+function swap(arr, leftIndex, rightIndex){
+  let temp = arr[leftIndex];
+  arr[leftIndex] = arr[rightIndex];
+  arr[rightIndex] = temp;
 }
