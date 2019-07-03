@@ -19,20 +19,20 @@ Students should have a basic understanding of implementation, see below, and whe
 
 ## Include your “Visual” here
 
-input -> [2, 4, 3, 5, 4]
+input -> [2, 6, 3, 1, 6, 5, 2, 4, 8]
 
-iteration 1 ->[2, 4], [3, 5, 4]
+iteration 1 ->[2, 3, 1, 5, 2, 4]  [6, 6, 8]
 
-iteration 2 ->[2], [4], [3], [5, 4]
+iteration 2 ->[2, 1, 2] [3, 5, 4] [6, 6, 8]
 
-iteration 3 ->[2], [4], [3], [5], [4]
+iteration 3 ->[1, 2, 2]  [3, 4, 5]
 
-output -> [2, 3, 4, 4, 5]
+output -> [1, 2, 2, 3, 4, 5, 6, 6, 8]
 
 ## Algorithm
-Start with creating a function and passing in an array
+Start with creating a function and passing in an array, the starting index and the ending index
 ```
-function mergeSort(arr){
+function quickSort(arr, left, right){
 
 }
 ```
@@ -42,132 +42,137 @@ then add an if statement to make sure an array was passed in
     throw 'input not an array';
   }
 ```
-then add another if statement to make sure that the recursion stops when the arrays get down to a length of 1
+then add another if statement to make sure that the recursion stops when the arrays get down to the low side being less than the high side, inside this if call recursively to run continously which will also call the partition function to move the partition and inside of that function calls the swap function which changes number locations
 ```
-  if (arr.length === 1) {
-    return arr;
-  }
-```
-then create another if statement that will create a midpoint, left half and right half from the array and then call another function, merge using recursion
-```
-  if(arr.length > 1){
-    let mid = Math.floor(arr.length / 2);
-    let left = arr.slice(0, mid);
-    let right = arr.slice(mid);
+  if(left < right){
 
-    return merge(mergeSort(left),mergeSort(right));
-  }
-```
-next create the merge function, this will take the chopped up original array and put it in the correct order, start by declaring the function and the variables you will need
-```
-function merge(left, right){
-  let result = [];
-  let indexLeft = 0;
-  let indexRight = 0;
-```
-then create a while loop that will run while the index of the left or right is less than the amount of items in the left and right arrays you passed in.  also check to make sure that each item is actually a number while you run through them.
-```
-      while(indexLeft < left.length && indexRight < right.length){
-    if(typeof left[indexLeft] !== 'number' || typeof right[indexRight] !== 'number'){
+    if(typeof arr[left] !== 'number' || typeof arr[right] !== 'number'){
       throw 'invalid data in array';
     }
+    // Partition the array by setting the position of the pivot value
+    let position = partition(arr, left, right);
+    // Sort the left
+    quickSort(arr, left, position - 1);
+    
+    // Sort the right
+    quickSort(arr, position + 1, right);
+  }
 ```
-then using if statements compare the digits and push them into your results array in the correct order
+next create the partion function which takes in an array, the start index of said array and the end inside this function you are assigning a pivot point which will be the end index a low which will be the start index, a for loop to run over the passed in array that will call the swap function when numbers need to change positions
 ```
-    if(left[indexLeft] < right[indexRight]){
-      result.push(left[indexLeft]);
-      indexLeft++;
-    }else{
-      result.push(right[indexRight]);
-      indexRight++;
+function partition(arr, left, right){
+  // set a pivot value as a point of reference
+  let pivot = arr[right];
+  // create a variable to track the largest index of numbers lower than the defined pivot
+  let low = left - 1;
+  for( let i = left; i <= right - 1; i++){
+
+    if(arr[i] <= pivot){
+      low++;
+      swap(arr, i, low);
     }
+  }
+  // place the value of the pivot location in the middle.
+  // all numbers smaller than the pivot are on the left, larger on the right.
+  swap(arr, right, low + 1);
+  // return the pivot index point
+  return low + 1;
+}
 ```
-lastly combine the results back together and return them
+lastly you will need a swap function which simply changes the postion of two numbers in the array
 ```
-  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
+function swap(arr, leftIndex, rightIndex){
+
+  let temp = arr[leftIndex];
+  arr[leftIndex] = arr[rightIndex];
+  arr[rightIndex] = temp;
+}
 ```
 
 The whole thing put together looks like this
 ```
-function mergeSort(arr){
+'use strict';
 
+// eslint-disable-next-line no-unused-vars
+function quickSort(arr, left, right){
   if(!Array.isArray(arr)){
     throw 'input not an array';
   }
 
-  if (arr.length === 1) {
-    return arr;
-  }
+  if(left < right){
 
-  if(arr.length > 1){
-    let mid = Math.floor(arr.length / 2);
-    let left = arr.slice(0, mid);
-    let right = arr.slice(mid);
-
-    return merge(mergeSort(left),mergeSort(right));
+    if(typeof arr[left] !== 'number' || typeof arr[right] !== 'number'){
+      throw 'invalid data in array';
+    }
+    // Partition the array by setting the position of the pivot value
+    let position = partition(arr, left, right);
+    // Sort the left
+    quickSort(arr, left, position - 1);
+    
+    // Sort the right
+    quickSort(arr, position + 1, right);
   }
 }
 
-function merge(left, right){
-  let result = [];
-  let indexLeft = 0;
-  let indexRight = 0;
+function partition(arr, left, right){
+  // set a pivot value as a point of reference
+  let pivot = arr[right];
+  // create a variable to track the largest index of numbers lower than the defined pivot
+  let low = left - 1;
+  for( let i = left; i <= right - 1; i++){
 
-  while(indexLeft < left.length && indexRight < right.length){
-    if(typeof left[indexLeft] !== 'number' || typeof right[indexRight] !== 'number'){
-      throw 'invalid data in array';
-    }
-
-    if(left[indexLeft] < right[indexRight]){
-      result.push(left[indexLeft]);
-      indexLeft++;
-    }else{
-      result.push(right[indexRight]);
-      indexRight++;
+    if(arr[i] <= pivot){
+      low++;
+      swap(arr, i, low);
     }
   }
-  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
+  // place the value of the pivot location in the middle.
+  // all numbers smaller than the pivot are on the left, larger on the right.
+  swap(arr, right, low + 1);
+  // return the pivot index point
+  return low + 1;
+}
+
+function swap(arr, leftIndex, rightIndex){
+
+  let temp = arr[leftIndex];
+  arr[leftIndex] = arr[rightIndex];
+  arr[rightIndex] = temp;
 }
 ```
 
 #### Pseudocode
 ```
+ALGORITHM QuickSort(arr, left, right)
+    if left < right
+        // Partition the array by setting the position of the pivot value 
+        DEFINE position <-- Partition(arr, left, right)
+        // Sort the left
+        QuickSort(arr, left, position - 1)
+        // Sort the right
+        QuickSort(arr, position + 1, right)
 
-ALGORITHM Mergesort(arr)
-    DECLARE n <-- arr.length
-           
-    if arr.length > 1
-      DECLARE mid <-- n/2
-      DECLARE b <-- arr[0...mid]
-      DECLARE c <-- arr[mid...n]
-      // break down the left side
-      Mergesort(b)
-      // break down the right side
-      Mergesort(c)
-      // merge the left and the right side together
-      Merge(b, c, arr)
+ALGORITHM Partition(arr, left, right)
+    // set a pivot value as a point of reference
+    DEFINE pivot <-- arr[right]
+    // create a variable to track the largest index of numbers lower than the defined pivot
+    DEFINE low <-- left - 1
+    for i <- left to right do
+        if arr[i] <= pivot
+            low++
+            Swap(arr, i, low)
 
-ALGORITHM Merge(b, c, a)
-    DECLARE i <-- 0
-    DECLARE j <-- 0
-    DECLARE k <-- 0
+     // place the value of the pivot location in the middle.
+     // all numbers smaller than the pivot are on the left, larger on the right. 
+     Swap(arr, right, low + 1)
+    // return the pivot index point
+     return low + 1
 
-    while i < b && j < c
-        if b[i] <= c[j]
-            a[k] <-- b[i]
-            i <-- i + 1
-        else
-            a[k] = c[j]
-            j <-- j + 1
-            
-        k <-- k + 1
-
-    if i = b.length
-       add remaining items in array c to array a
-    else
-       add remaining items in array b to array a
-       
-    return a
+ALGORITHM Swap(arr, i, low)
+    DEFINE temp;
+    temp <-- arr[i]
+    arr[i] <-- arr[low]
+    arr[low] <-- temp
 
 ```
 
