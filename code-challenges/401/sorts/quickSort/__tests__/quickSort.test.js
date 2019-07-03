@@ -14,7 +14,7 @@ describe('Quick Sort Tests', () => {
   it('should actually sort the array', () => {
     expect(quickSort).toBeDefined();
     // Act
-    quickSort(testArray);
+    quickSort(testArray, 0, testArray.length - 1);
     // Assert
     expect(testArray).toEqual([1, 2, 3, 4, 5, 6, 7]);
   });
@@ -22,14 +22,14 @@ describe('Quick Sort Tests', () => {
   it('it should only take in an array', () => {
     let badArray = 'thisshouldthrowanerror';
     expect(() => {
-      mergeSort(badArray);
+      quickSort(badArray, 0, 1);
     }).toThrow('input not an array');
   });
 
   it('it should only take an array of all numbers', () => {
     let badStringArray = [1, 3, 4, 'thisshouldthrowanerror', 6];
     expect(() => {
-      mergeSort(badStringArray);
+      quickSort(badStringArray, 0, badStringArray - 1);
     }).toThrow('invalid data in array');
   });
 

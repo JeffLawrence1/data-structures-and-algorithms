@@ -2,6 +2,10 @@
 
 // eslint-disable-next-line no-unused-vars
 function quickSort(arr, left, right){
+  if(!Array.isArray(arr)){
+    throw 'input not an array';
+  }
+
   if(left < right){
     // Partition the array by setting the position of the pivot value
     let position = partition(arr, left, right);
@@ -19,6 +23,9 @@ function partition(arr, left, right){
   // create a variable to track the largest index of numbers lower than the defined pivot
   let low = left - 1;
   for( let i = left; i <= right - 1; i++){
+    if(typeof arr[i] !== 'number'){
+      throw 'invalid data in array';
+    }
     if(arr[i] <= pivot){
       low++;
       swap(arr, i, low);
@@ -36,3 +43,5 @@ function swap(arr, leftIndex, rightIndex){
   arr[leftIndex] = arr[rightIndex];
   arr[rightIndex] = temp;
 }
+
+module.exports = quickSort;
