@@ -36,8 +36,8 @@ describe('Quick Sort Tests', () => {
   it('should still sort an array of only length 2', () => {
     let testShort = [5, 2];
     // Act
-    let answer = quickSort(testShort, 0, 2);
+    quickSort(testShort, 0, 1);
     // Assert
-    expect(answer).toEqual([2, 5]);
+    expect(testShort).toEqual([2, 5]);
   });
 });
