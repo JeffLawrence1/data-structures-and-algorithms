@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line no-unused-vars
 function quickSort(arr, left, right){
   if(left < right){
     // Partition the array by setting the position of the pivot value
