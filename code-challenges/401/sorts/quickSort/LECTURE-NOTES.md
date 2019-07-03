@@ -2,18 +2,18 @@
 
 ## Brief description of what this algorithm is, does, and why we care.
 
-Merge sort is an efficient, general-purpose, comparison-based sorting algorithm. Implementations produce a stable sort, which means that the order of equal elements is the same in the input and output. Merge sort is a divide and conquer algorithm.
+Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm, serving as a systematic method for placing the elements of a random access file or an array in order. In efficient implementations it is not a stable sort, meaning that the relative order of equal sort items is not preserved. Quicksort can operate in-place on an array, requiring small additional amounts of memory to perform the sorting.
 
 ## Is it more efficient than others? How does it attack the problem differently?
 
-It is more efficient than insertion sort especially when using larger data sets.  However for very small data sets it can be surpassed, very small only.  For larger data sets it is considerably more efficient.
+It is more efficient than insertion sort especially when using larger data sets.  For larger data sets it is considerably more efficient.  It's average Big O is (n log(n)) which is the same run time as merge sort. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
 
 ## Learning Objectives
-Today students will learn how merge sort works.  
+Today students will learn how quick sort works.  
 
-Merge sort is a not relatively simple as it relies on recursion and multiple functions however it is much more efficient than insertion sort.  
+quick sort is not relatively simple as it relies on recursion and multiple functions however it is much more efficient than insertion sort.  
 
-Its best case and worst case scenarios all result in a Big O of O(n log(n)).
+Its average and best case case scenarios result in a Big O of O(n log(n)).  Its absolute worst case scenario could result in a Big O of O(n2) although very rare.
 
 Students should have a basic understanding of implementation, see below, and when to use, which is anything larger than miniscule.
 
