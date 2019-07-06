@@ -138,7 +138,17 @@ describe('Singly Linked List Module', () => {
 
   it('Can properly insert into the linked list', () => {
     newList.add(1);
+    newList.add(2);
 
     expect(newList.head.value).toEqual(1);
+    expect(newList.head.next.value).toEqual(2);
+  });
+
+  it('values in linked list works', () => {
+    newList.add(1);
+    newList.add(2);
+    let val = newList.values();
+
+    expect(val).toEqual([1, 2]);
   });
 });
