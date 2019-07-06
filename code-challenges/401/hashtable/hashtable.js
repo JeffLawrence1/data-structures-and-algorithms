@@ -53,6 +53,22 @@ class HashTable{
     let hash = key.split('').reduce((prev, cur) => prev + cur.charCodeAt(0), 0) * 599 % this.size;
     return hash;
   }
+
+  add(key, value){
+    if(!key) throw new Error('invalid key provided');
+
+    let index = this.hash(key);
+
+    if(!this.buckets[index]){
+      this.buckets[index] = new LinkedList();
+    }
+
+    try{
+      this.buckets[index].add([key, value]);
+    }catch(e){
+      throw e;
+    }
+  }
 }
 
 module.exports = HashTable;
