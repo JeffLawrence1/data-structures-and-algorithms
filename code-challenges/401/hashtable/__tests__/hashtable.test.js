@@ -108,6 +108,19 @@ describe('Hash add function', () => {
     //assert
     expect(hashTable.contains('cat')).toBe(true);
   });
+
+  it('should throw an error if key is already used', () => {
+    //arrange
+    // let expectedHash = 3;
+    let key = 'cat';
+    let value = 'tacocat';
+    let hashTable = new HashTable();
+    //act
+    hashTable.add(key, value);
+
+    //assert
+    expect(() => hashTable.add(key, value)).toThrow('key already being used');
+  });
 });
 
 describe('Hash get function', () => {
@@ -147,8 +160,10 @@ describe('Singly Linked List Module', () => {
   it('values in linked list works', () => {
     newList.add(1);
     newList.add(2);
+    newList.add(1);
+    newList.add(2);
     let val = newList.values();
 
-    expect(val).toEqual([1, 2]);
+    expect(val).toEqual([1, 2, 1, 2]);
   });
 });
