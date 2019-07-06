@@ -56,3 +56,5 @@ Data Structures and Algorithms repo for 301 and 401
 * [merge-sort](./code-challenges/401/sorts/mergeSort)
 
 * [quick-sort](./code-challenges/401/sorts/quickSort)
+
+* [hashtable](./code-challenges/401/hashtable)
