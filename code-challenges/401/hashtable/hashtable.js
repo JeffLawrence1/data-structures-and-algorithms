@@ -29,6 +29,19 @@ class LinkedList {
     current.next = node;
   }
 
+  getWithKey(key){
+    if(!this.head) return;
+
+    let current = this.head;
+    while(current){
+      if(current.value[0] === key){
+        return current.value[1];
+      }
+      current = current.next;
+    }
+    return;
+  }
+
   values(){
     let values = [];
     let current = this.head;
@@ -68,6 +81,22 @@ class HashTable{
     }catch(e){
       throw e;
     }
+  }
+
+  get(key){
+    if(!key) throw new Error('invalid key provided');
+
+    let index = this.hash(key);
+
+    if(!this.buckets[index]){
+      return null;
+    }
+
+    return this.buckets[index].getWithKey(key);
+  }
+
+  prettyPrint(){
+    this.buckets.forEach((item, index) => console.log(index, item && item.values()));
   }
 }
 
