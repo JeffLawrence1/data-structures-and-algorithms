@@ -10,11 +10,12 @@ describe('Hash Table', () =>{
     //act
     hashTable = new HashTable(expectedSize);
 
+    //assert
     expect(hashTable).toBeInstanceOf(HashTable);
     expect(hashTable.size).toBeDefined();
     expect(hashTable.size).toBe(expectedSize);
     expect(hashTable.buckets).toBeDefined();
-    expect(hashTable.buckets).toBe(expectedSize);
+    expect(hashTable.buckets.length).toBe(expectedSize);
   });
 });
 

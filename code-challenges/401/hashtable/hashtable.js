@@ -48,6 +48,11 @@ class HashTable{
     this.size = size || 5;
     this.buckets = new Array(this.size);
   }
+
+  hash(key){
+    let hash = key.split('').reduce((prev, cur) => prev + cur.charCodeAt(0), 0) * 599 % this.size;
+    return hash;
+  }
 }
 
 module.exports = HashTable;
