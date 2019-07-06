@@ -105,8 +105,9 @@ describe('Hash add function', () => {
     let hashTable = new HashTable();
     //act
     hashTable.add(key, value);
+    let result = hashTable.hash(key);
     //assert
-    expect(hashTable.contains('cat')).toBe(true);
+    expect(hashTable.buckets[result].head.value[1]).toBe('tacocat');
   });
 
   it('should throw an error if key is already used', () => {
