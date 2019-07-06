@@ -69,6 +69,9 @@ class HashTable{
 
   add(key, value){
     if(!key) throw new Error('invalid key provided');
+    if(this.contains(key)){
+      throw new Error('key already being used');
+    }
 
     let index = this.hash(key);
 
@@ -95,9 +98,21 @@ class HashTable{
     return this.buckets[index].getWithKey(key);
   }
 
+  contains(key){
+    if(!key) throw new Error('invalid key provided');
+
+    let index = this.hash(key);
+
+    if(!this.buckets[index]){
+      return null;
+    }
+
+    return this.buckets[index].getWithKey(key) ? true : false;
+  }
+
   prettyPrint(){
     this.buckets.forEach((item, index) => console.log(index, item && item.values()));
   }
 }
 
-module.exports = HashTable;
+module.exports = {HashTable, LinkedList};

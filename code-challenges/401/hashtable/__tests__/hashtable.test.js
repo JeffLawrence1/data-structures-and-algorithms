@@ -1,6 +1,7 @@
 'use strict';
 
-const HashTable = require('../hashtable');
+const {HashTable} = require('../hashtable');
+const {LinkedList} = require('../hashtable');
 
 describe('Hash Table', () =>{
   it('should construct a Hash Table', () => {
