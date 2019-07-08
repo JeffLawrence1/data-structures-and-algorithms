@@ -58,3 +58,5 @@ Data Structures and Algorithms repo for 301 and 401
 * [quick-sort](./code-challenges/401/sorts/quickSort)
 
 * [hashtable](./code-challenges/401/hashtable)
+
+* [repeatedWord](./code-challenges/401/repeatedWord)
