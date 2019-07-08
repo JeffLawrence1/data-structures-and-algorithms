@@ -26,4 +26,12 @@ describe('repeatedWord function', () =>{
     //assert
     expect(repeatedWord(newString)).toBe('this');
   });
+
+  it('should be able to determine if no duplicates are found', () => {
+    //arrange
+    let newString = 'is a test to see if it can find no duplicates';
+    //act
+    //assert
+    expect(repeatedWord(newString)).toBe('no duplicates found');
+  });
 });
