@@ -120,7 +120,7 @@ describe('Hash add function', () => {
     hashTable.add(key, value);
 
     //assert
-    expect(() => hashTable.add(key, value)).toThrow('key already being used');
+    expect(hashTable.add(key, value)).toBe('key already being used');
   });
 });
 
