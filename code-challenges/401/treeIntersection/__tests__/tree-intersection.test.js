@@ -77,4 +77,12 @@ describe('Tree intersection tests', () => {
     expect(treeIntersection(tree, tree3)).toStrictEqual([]);
   });
 
+  it('Should only take trees', () => {
+
+    let badString = 'rawrw!!!';
+    //act
+    //assert
+    expect(() => treeIntersection(badString, badString)).toThrow('not a tree');
+  });
+
 });
