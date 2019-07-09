@@ -4,6 +4,9 @@
 // const BinaryTree = require('../tree/tree');
 
 function treeIntersection(tree1, tree2){
+  if(!tree1.root || !tree2.root){
+    throw new Error('not a tree');
+  }
   let treeOne = tree1.preOrder();
   let treeTwo = tree2.preOrder();
   let answerArr = [];
