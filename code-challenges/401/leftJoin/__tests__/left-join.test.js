@@ -29,6 +29,13 @@ describe('Left Join Function', () =>{
     hasher2.add('doggo', 144);
   });
 
+  it('should properly do a left join', () => {
+    expect(leftJoin(hasher, hasher1)).toEqual([ [ 'doggo', 14, 144 ],
+      [ 'doggo2', 144, 144 ],
+      [ 'tacocat', 13, 133 ],
+      [ 'dog', 12, 122 ],
+      [ 'cat', 1, 1 ] ]);
+  });
 
   it('should properly do a left join', () => {
     expect(leftJoin(hasher1, hasher2)).toEqual([ [ 'doggo', 14, 144 ],
