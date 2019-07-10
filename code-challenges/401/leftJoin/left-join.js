@@ -1,6 +1,9 @@
 'use strict';
 
 function leftJoin(hash1, hash2){
+  if(!hash1.buckets || !hash2.buckets){
+    throw new Error('not valid hash tables');
+  }
   let answerArr = [];
   let key;
   let hash1Val;

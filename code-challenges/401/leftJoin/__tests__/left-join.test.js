@@ -45,18 +45,9 @@ describe('Left Join Function', () =>{
       [ 'cat', 1, 1 ] ]);
   });
 
-  // it('should construct a Hash Table with a default size of 5', () => {
-  //   //arrange
-  //   let hashTable;
-  //   let expectedSize = 5;
-  //   //act
-  //   hashTable = new HashTable();
-
-  //   //assert
-  //   expect(hashTable).toBeInstanceOf(HashTable);
-  //   expect(hashTable.size).toBeDefined();
-  //   expect(hashTable.size).toBe(expectedSize);
-  //   expect(hashTable.buckets).toBeDefined();
-  //   expect(hashTable.buckets.length).toBe(expectedSize);
-  // });
+  it('should throw an error if params are not hashtables', () => {
+    let badTable1 = 'jfjjfjj';
+    let badTable2 = 'jklsdjflk';
+    expect(() => leftJoin(badTable1, badTable2)).toThrow('not valid hash tables');
+  });
 });
