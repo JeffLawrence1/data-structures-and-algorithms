@@ -30,14 +30,14 @@ describe('Left Join Function', () =>{
   });
 
   it('should properly do a left join', () => {
-    expect(leftJoin(hasher, hasher1)).toEqual([ [ 'doggo', 14, 144 ],
+    expect(leftJoin(hasher, hasher1)).toEqual([ [ 'doggo', 14, 14 ],
       [ 'doggo2', 144, 144 ],
-      [ 'tacocat', 13, 133 ],
-      [ 'dog', 12, 122 ],
+      [ 'tacocat', 13, 13 ],
+      [ 'dog', 12, 12 ],
       [ 'cat', 1, 1 ] ]);
   });
 
-  it('should properly do a left join', () => {
+  it('should properly do a left join including a null value', () => {
     expect(leftJoin(hasher1, hasher2)).toEqual([ [ 'doggo', 14, 144 ],
       [ 'doggo2', 144, null ],
       [ 'tacocat', 13, 133 ],

@@ -1,7 +1,5 @@
 'use strict';
 
-const HashTable = require('../hashtable/hashtable');
-
 function leftJoin(hash1, hash2){
   let answerArr = [];
   let key;
@@ -27,18 +25,4 @@ function leftJoin(hash1, hash2){
 }
 
 module.exports = leftJoin;
-// let hasher1 = new HashTable.HashTable(10);
-// hasher1.add('cat', 1);
-// hasher1.add('dog', 12);
-// hasher1.add('tacocat', 13);
-// hasher1.add('doggo', 14);
-// hasher1.add('doggo2', 144);
 
-// let hasher2 = new HashTable.HashTable(10);
-// hasher2.add('cat', 1);
-// hasher2.add('dog', 122);
-// hasher2.add('tacocat', 133);
-// hasher2.add('doggo', 144);
-
-
-// console.log(leftJoin(hasher1, hasher2));
