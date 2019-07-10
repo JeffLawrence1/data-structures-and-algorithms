@@ -12,11 +12,10 @@ I paid attention to the inclass demo, did some google research, a little plannin
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
-repeatedWord - takes in a string and runs through it adding to a hashtable to find the first repeated word.
+leftJoin - takes in two hashtables and performs a left join operation on them.
 
 ## Answer Code
-* [code](./repeatedWord.js)
+* [code](./left-join.js)
 
 ## Whiteboard Pictures
-* [Whiteboard1](https://photos.app.goo.gl/r2KmgVSnsTiwtrLL7)
-* [Whiteboard2](https://photos.app.goo.gl/s7YBjWFPxxyE34Lp9)
+* [Whiteboard1](https://photos.app.goo.gl/YZqj66yo5tLbuQNB7)
