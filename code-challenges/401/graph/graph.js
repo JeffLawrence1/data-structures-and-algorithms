@@ -8,7 +8,7 @@ class Vertex {
 
 class Edge {
   constructor(vertex, weight){
-    this.weight = weight || 1;
+    this.weight = weight || 0;
     this.vertex = vertex;
   }
 }
@@ -27,9 +27,60 @@ class Graph {
     this._adjacencyList.set(vertex, []);
   }
 
-  addDirectedEdge(){
+  addDirectedEdge(startVertex, endVertex, weight = 0){
+    if(!this._adjacencyList.has(startVertex) || !this._adjacencyList.has(endVertex)){
+      throw new Error('ERROR: invalid vertices');
+    }
+    const adjacencies = this._adjacencyList.get(startVertex);
+    adjacencies.push(new Edge(endVertex, weight));
+  }
+
+  addBiDirectionalEdge(vertex_a, vertex_b, weight = 0){
+    this.addDirectedEdge(vertex_a, vertex_b, weight);
+    this.addDirectedEdge(vertex_b, vertex_a, weight);
+  }
+
+  getNeighbors(vertex){
+    if(!this._adjacencyList.has(vertex)){
+      throw new Error('ERROR: invalid vertex', vertex);
+    }
+    return [...this._adjacencyList.get(vertex)];
+  }
+
+  prettyPrintAdjacencyList(){
 
   }
 }
+
+
+const graph = new Graph();
+
+const eight = new Vertex(8);
+const six = new Vertex(6);
+const seven = new Vertex(7);
+const five = new Vertex(5);
+const three = new Vertex(3);
+const oh = new Vertex(0);
+const nine = new Vertex(9);
+
+graph.addVertex(eight);
+graph.addVertex(six);
+graph.addVertex(seven);
+graph.addVertex(five);
+graph.addVertex(three);
+graph.addVertex(oh);
+graph.addVertex(nine);
+
+graph.addDirectedEdge(eight, six);
+graph.addDirectedEdge(eight, five);
+graph.addDirectedEdge(six, seven);
+graph.addDirectedEdge(seven, five);
+graph.addDirectedEdge(five, three);
+graph.addDirectedEdge(three, oh);
+graph.addDirectedEdge(oh, nine);
+graph.addDirectedEdge(nine, eight);
+
+
+
 
 module.exports = Graph;
