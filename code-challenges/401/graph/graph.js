@@ -47,6 +47,27 @@ class Graph {
     return [...this._adjacencyList.get(vertex)];
   }
 
+  pathTo(startVertex, goalVertex){
+    const stack = [];
+    const visitedVertices = new Set();
+    const parentPath = new Map();
+
+    stack.push(startVertex);
+    visitedVertices.add(startVertex);
+
+    while(stack.length){
+      const currentVertex = stack.pop();
+
+      console.log(currentVertex, goalVertex);
+      if(currentVertex === goalVertex){
+        return parentPath;
+      }
+
+      const neighbors = this.getNeighbors(currentVertex);
+
+      
+    }
+  }
   prettyPrintAdjacencyList(){
 
   }
@@ -80,6 +101,7 @@ graph.addDirectedEdge(three, oh);
 graph.addDirectedEdge(oh, nine);
 graph.addDirectedEdge(nine, eight);
 
+console.log(graph);
 
 
 
