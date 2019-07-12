@@ -1,5 +1,7 @@
 'use strict';
 
+// const util = require('util');
+
 class Vertex {
   constructor(value){
     this.value = value;
@@ -65,12 +67,23 @@ class Graph {
 
       const neighbors = this.getNeighbors(currentVertex);
 
-      
+      for(let edge of neighbors){
+        const neighborVertex = edge.vertex;
+
+        if(visitedVertices.has(neighborVertex)){
+          continue;
+        }else{
+          visitedVertices.add(neighborVertex);
+        }
+
+        stack.push(neighborVertex);
+        parentPath.set(neighborVertex, currentVertex);
+      }
     }
   }
-  prettyPrintAdjacencyList(){
+  // prettyPrintAdjacencyList(){
 
-  }
+  // }
 }
 
 
@@ -102,7 +115,7 @@ graph.addDirectedEdge(oh, nine);
 graph.addDirectedEdge(nine, eight);
 
 console.log(graph);
-
-
-
+console.log(graph.getNeighbors(eight));
+console.log(graph.pathTo(eight, six));
+// console.log(util.inspect(graph.pathTo(eight, five), false, null, true));
 module.exports = Graph;
