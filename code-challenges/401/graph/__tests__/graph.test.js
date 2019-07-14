@@ -51,7 +51,7 @@ describe('Graph Tests', () => {
   });
 
   it('A collection of all nodes can be properly retrieved from the graph', () => {
-
+    
     expect(graph.getNodes(three)).toEqual([{'value': 0}, {'value': 3}, {'value': 9}, {'value': 0}, {'value': 8}, {'value': 9}, {'value': 6}, {'value': 8}, {'value': 5}, {'value': 8}, {'value': 7}, {'value': 6}]);
   });
 
@@ -68,6 +68,27 @@ describe('Graph Tests', () => {
   it('The proper size is returned, representing the number of nodes in the graph', () => {
 
     expect(graph.size()).toEqual(7);
+  });
+
+  it('A graph with only one node and edge can be properly returned', () => {
+    let smallGraph = new Graph.Graph();
+    const test = new Graph.Vertex(22);
+    smallGraph.addVertex(test);
+    smallGraph.addEdge(test, test);
+    expect(smallGraph.size()).toEqual(1);
+    expect(smallGraph.pathTo(test, test)).toEqual([]);
+  });
+
+  it('An empty graph properly returns null', () => {
+    let smallGraph = new Graph.Graph();
+
+    expect(smallGraph.size()).toEqual(null);
+  });
+
+  it('Can find a path', () => {
+
+
+    expect(graph.pathTo(seven, three)).toEqual([{'value': 5}, {'value': 7}, {'value': 3}, {'value': 5}]);
   });
 });
 
