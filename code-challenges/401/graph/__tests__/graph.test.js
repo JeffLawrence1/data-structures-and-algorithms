@@ -5,6 +5,8 @@ const Graph = require('../graph');
 describe('Graph Tests', () => {
 
   let graph;
+  let three;
+  let seven;
 
   beforeEach(() => {
 
@@ -12,9 +14,9 @@ describe('Graph Tests', () => {
 
     const eight = new Graph.Vertex(8);
     const six = new Graph.Vertex(6);
-    const seven = new Graph.Vertex(7);
+    seven = new Graph.Vertex(7);
     const five = new Graph.Vertex(5);
-    const three = new Graph.Vertex(3);
+    three = new Graph.Vertex(3);
     const oh = new Graph.Vertex(0);
     const nine = new Graph.Vertex(9);
     
@@ -37,22 +39,23 @@ describe('Graph Tests', () => {
   });
 
 
-  it('Can successfully find duplicates in two trees', () => {
-
-    expect(treeIntersection(tree, tree2)).toStrictEqual([25, 33]);
+  it('Node can be successfully added to the graph', () => {
+    expect(graph.size()).toBe(7);
+    graph.addNode(19);
+    expect(graph.size()).toBe(8);
   });
 
-  it('Can successfully operate if there are no duplicates in two trees', () => {
-
-    expect(treeIntersection(tree, tree3)).toStrictEqual([]);
+  it('An edge can be successfully added to the graph', () => {
+    graph.addEdge(three, seven);
+    expect(graph.pathTo(three, seven)).toBe();
   });
 
-  it('Should only take trees', () => {
+  // it('Should only take trees', () => {
 
-    let badString = 'rawrw!!!';
-    //act
-    //assert
-    expect(() => treeIntersection(badString, badString)).toThrow('not a tree');
-  });
+  //   let badString = 'rawrw!!!';
+  //   //act
+  //   //assert
+  //   expect(() => treeIntersection(badString, badString)).toThrow('not a tree');
+  // });
 
 });
