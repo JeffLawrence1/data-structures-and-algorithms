@@ -19,15 +19,17 @@ class Edge {
 class Graph {
   constructor() {
     this._adjacencyList = new Map();
+    this.numberOfNodes = 0;
   }
 
-  addValue(value){
-    this.addNode(new Vertex(value));
-  }
-
-  addNode(vertex){
-    let newNode = this._adjacencyList.set(vertex, []);
+  addNode(value){
+    let newNode = this.addVertex(new Vertex(value));
     return newNode;
+  }
+
+  addVertex(vertex){
+    this._adjacencyList.set(vertex, []);
+    this.numberOfNodes += 1;
   }
 
   addEdge(startVertex, endVertex, weight = 0){
@@ -82,6 +84,10 @@ class Graph {
       }
     }
   }
+
+  size(){
+    return this.numberOfNodes;
+  }
   // prettyPrintAdjacencyList(){
 
   // }
@@ -98,13 +104,13 @@ const three = new Vertex(3);
 const oh = new Vertex(0);
 const nine = new Vertex(9);
 
-graph.addNode(eight);
-graph.addNode(six);
-graph.addNode(seven);
-graph.addNode(five);
-graph.addNode(three);
-graph.addNode(oh);
-graph.addNode(nine);
+graph.addVertex(eight);
+graph.addVertex(six);
+graph.addVertex(seven);
+graph.addVertex(five);
+graph.addVertex(three);
+graph.addVertex(oh);
+graph.addVertex(nine);
 
 graph.addEdge(eight, six);
 graph.addEdge(eight, five);
@@ -116,6 +122,7 @@ graph.addEdge(oh, nine);
 graph.addEdge(nine, eight);
 
 console.log(graph);
+console.log(graph.size());
 console.log(graph.getNeighbors(eight));
 console.log(graph.pathTo(eight, six));
 // console.log(util.inspect(graph.pathTo(eight, five), false, null, true));
