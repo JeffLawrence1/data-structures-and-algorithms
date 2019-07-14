@@ -50,12 +50,9 @@ describe('Graph Tests', () => {
     expect(graph.getNeighbors(three)).toEqual([{'vertex': {'value': 0}, 'weight': 0}, {'vertex': {'value': 7}, 'weight': 0}]);
   });
 
-  it('Should only take trees', () => {
+  it('A collection of all nodes can be properly retrieved from the graph', () => {
 
-    let badString = 'rawrw!!!';
-    //act
-    //assert
-    expect(() => treeIntersection(badString, badString)).toThrow('not a tree');
+    expect(graph.getNodes(three)).toEqual([{'value': 0}, {'value': 3}, {'value': 9}, {'value': 0}, {'value': 8}, {'value': 9}, {'value': 6}, {'value': 8}, {'value': 5}, {'value': 8}, {'value': 7}, {'value': 6}]);
   });
 
 });

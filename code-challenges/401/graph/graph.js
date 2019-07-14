@@ -48,7 +48,7 @@ class Graph {
   getNodes(startVertex){
     const stack = [];
     const visitedVertices = new Set();
-    const parentPath = new Map();
+    const parentPath = new Array();
 
     stack.push(startVertex);
     visitedVertices.add(startVertex);
@@ -70,7 +70,7 @@ class Graph {
         }
 
         stack.push(neighborVertex);
-        parentPath.set(neighborVertex, currentVertex);
+        parentPath.push(neighborVertex, currentVertex);
       }
     }
     return parentPath;
