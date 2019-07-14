@@ -47,15 +47,16 @@ describe('Graph Tests', () => {
 
   it('An edge can be successfully added to the graph', () => {
     graph.addEdge(three, seven);
-    expect(graph.pathTo(three, seven)).toBe();
+    expect(graph.getNeighbors(three)).toEqual([{'vertex': {'value': 0}, 'weight': 0}, {'vertex': {'value': 7}, 'weight': 0}]);
   });
 
-  // it('Should only take trees', () => {
+  it('Should only take trees', () => {
 
-  //   let badString = 'rawrw!!!';
-  //   //act
-  //   //assert
-  //   expect(() => treeIntersection(badString, badString)).toThrow('not a tree');
-  // });
+    let badString = 'rawrw!!!';
+    //act
+    //assert
+    expect(() => treeIntersection(badString, badString)).toThrow('not a tree');
+  });
 
 });
+
