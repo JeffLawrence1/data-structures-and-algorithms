@@ -45,6 +45,37 @@ class Graph {
     this.addDirectedEdge(vertex_b, vertex_a, weight);
   }
 
+  getNodes(startVertex){
+    const stack = [];
+    const visitedVertices = new Set();
+    const parentPath = new Map();
+
+    stack.push(startVertex);
+    visitedVertices.add(startVertex);
+
+    while(stack.length){
+      const currentVertex = stack.pop();
+
+      console.log(currentVertex);
+
+      const neighbors = this.getNeighbors(currentVertex);
+
+      for(let edge of neighbors){
+        const neighborVertex = edge.vertex;
+
+        if(visitedVertices.has(neighborVertex)){
+          continue;
+        }else{
+          visitedVertices.add(neighborVertex);
+        }
+
+        stack.push(neighborVertex);
+        parentPath.set(neighborVertex, currentVertex);
+      }
+    }
+    return parentPath;
+  }
+
   getNeighbors(vertex){
     if(!this._adjacencyList.has(vertex)){
       throw new Error('ERROR: invalid vertex', vertex);
@@ -121,9 +152,10 @@ graph.addEdge(three, oh);
 graph.addEdge(oh, nine);
 graph.addEdge(nine, eight);
 
-console.log(graph);
-console.log(graph.size());
-console.log(graph.getNeighbors(eight));
-console.log(graph.pathTo(eight, six));
+// console.log(graph);
+// console.log(graph.size());
+// console.log(graph.getNeighbors(eight));
+// console.log(graph.pathTo(eight, six));
+console.log(graph.getNodes(five));
 // console.log(util.inspect(graph.pathTo(eight, five), false, null, true));
 module.exports = Graph;
