@@ -64,5 +64,10 @@ describe('Graph Tests', () => {
 
     expect(graph.getNeighbors(seven)).toEqual([{'vertex': {'value': 5}, 'weight': 0}]);
   });
+
+  it('The proper size is returned, representing the number of nodes in the graph', () => {
+
+    expect(graph.size()).toEqual(7);
+  });
 });
 
