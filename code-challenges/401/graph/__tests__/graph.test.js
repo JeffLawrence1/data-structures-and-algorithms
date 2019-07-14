@@ -55,5 +55,9 @@ describe('Graph Tests', () => {
     expect(graph.getNodes(three)).toEqual([{'value': 0}, {'value': 3}, {'value': 9}, {'value': 0}, {'value': 8}, {'value': 9}, {'value': 6}, {'value': 8}, {'value': 5}, {'value': 8}, {'value': 7}, {'value': 6}]);
   });
 
+  it('All appropriate neighbors can be retrieved from the graph', () => {
+
+    expect(graph.getNeighbors(seven)).toEqual([{'vertex': {'value': 5}, 'weight': 0}]);
+  });
 });
 
