@@ -59,5 +59,10 @@ describe('Graph Tests', () => {
 
     expect(graph.getNeighbors(seven)).toEqual([{'vertex': {'value': 5}, 'weight': 0}]);
   });
+
+  it('Neighbors are returned with the weight between nodes included', () => {
+
+    expect(graph.getNeighbors(seven)).toEqual([{'vertex': {'value': 5}, 'weight': 0}]);
+  });
 });
 
