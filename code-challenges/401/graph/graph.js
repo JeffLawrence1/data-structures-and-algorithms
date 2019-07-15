@@ -116,6 +116,38 @@ class Graph {
     }
   }
 
+  breadthFirst(startNode){
+    if(this.numberOfNodes === 0){
+      return null;
+    }
+
+    let visitedSet = new Set();
+    let answerArray = [];
+    let queue = [];
+    queue.push(startNode);
+    visitedSet.add(startNode);
+
+    while(queue.length){
+      let deQ = queue.shift();
+      answerArray.push(deQ);
+      visitedSet.add(deQ);
+      const neighbors = this.getNeighbors(deQ);
+      for(let j of neighbors){
+        let neighbor = j.vertex;
+        if(visitedSet.has(neighbor)){
+          continue;
+        }else{
+          visitedSet.add(neighbor);
+        }
+        queue.push(neighbor);
+      }
+    }
+    return answerArray;
+  }
+
+
+
+
   size(){
     if(this.numberOfNodes === 0){
       return null;
