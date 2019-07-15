@@ -117,15 +117,15 @@ class Graph {
   }
 
   breadthFirst(startNode){
+    if(this.numberOfNodes === 0){
+      return null;
+    }
+
     let visitedSet = new Set();
     let answerArray = [];
     let queue = [];
     queue.push(startNode);
     visitedSet.add(startNode);
-
-    if(this.numberOfNodes === 0){
-      return null;
-    }
 
     while(queue.length){
       let deQ = queue.shift();

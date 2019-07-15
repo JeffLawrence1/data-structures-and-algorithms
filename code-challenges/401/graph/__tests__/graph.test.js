@@ -96,7 +96,16 @@ describe('Graph Tests', () => {
     it('Can succesfully traverse the graph', () => {
 
       expect(graph.breadthFirst(seven)).toEqual([{'value': 7}, {'value': 5}, {'value': 3}, {'value': 0}, {'value': 9}, {'value': 8}, {'value': 6}]);
-  
+    });
+
+    it('Can succesfully traverse the graph using a different startpoint', () => {
+
+      expect(graph.breadthFirst(three)).toEqual([{'value': 3}, {'value': 0}, {'value': 9}, {'value': 8}, {'value': 6}, {'value': 5}, {'value': 7}]);
+    });
+
+    it('An empty graph properly returns null', () => {
+      let smallGraph = new Graph.Graph();
+      expect(smallGraph.breadthFirst()).toEqual(null);
     });
   });
 });
