@@ -3,6 +3,7 @@
 
 function breadthFirst(startNode){
   let visitedArray = [];
+  let answerArray = [];
   for(let i = 0; i < this.numberOfNodes; i++){
     visitedArray[i] = false;
     let queue = [];
@@ -10,6 +11,7 @@ function breadthFirst(startNode){
     queue.push(startNode);
     while(queue.length){
       let deQ = queue.shift();
+      answerArray.push(deQ);
       console.log(deQ);
       let adList = this._adjacencyList.get(deQ);
       for(let j in adList){
@@ -21,6 +23,7 @@ function breadthFirst(startNode){
       }
     }
   }
+  return answerArray;
 }
 
 module.exports = breadthFirst;

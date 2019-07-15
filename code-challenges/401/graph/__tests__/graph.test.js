@@ -90,5 +90,14 @@ describe('Graph Tests', () => {
 
     expect(graph.pathTo(seven, three)).toEqual([{'value': 5}, {'value': 7}, {'value': 3}, {'value': 5}]);
   });
+
+  describe('Breadth First Tests', () => {
+
+    it('Can succesfully traverse the graph', () => {
+
+      expect(graph.breadthFirst(seven)).toBe();
+  
+    });
+  });
 });
 

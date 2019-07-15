@@ -40,9 +40,9 @@ describe('Breadth First Tests', () => {
     graph.addEdge(nine, eight);
   });
 
-  it('Node can be successfully added to the graph', () => {
-    expect(graph.size()).toBe(7);
-    graph.addNode(19);
-    expect(graph.size()).toBe(8);
+  it('Can succesfully traverse the graph', () => {
+    
+    
+
   });
 });
