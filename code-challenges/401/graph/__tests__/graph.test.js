@@ -95,7 +95,7 @@ describe('Graph Tests', () => {
 
     it('Can succesfully traverse the graph', () => {
 
-      expect(graph.breadthFirst(seven)).toBe();
+      expect(graph.breadthFirst(seven)).toEqual([{'value': 7}, {'value': 5}, {'value': 3}, {'value': 0}, {'value': 9}, {'value': 8}, {'value': 6}]);
   
     });
   });

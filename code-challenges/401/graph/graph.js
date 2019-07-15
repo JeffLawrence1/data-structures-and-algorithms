@@ -117,35 +117,36 @@ class Graph {
   }
 
   breadthFirst(startNode){
-    let visitedArray = new Set();
-    // let answerArray = [];
+    let visitedSet = new Set();
+    let answerArray = [];
     let queue = [];
-    // for(let i = 0; i < this.numberOfNodes; i++){
-    //   visitedArray[i] = false;
-      
-    //   visitedArray[startNode] = true;
-      queue.push(startNode);
-      visitedArray.add(startNode);
-      while(queue.length){
-        console.log(visitedArray);
-        let deQ = queue.shift();
-        answerArray.push(deQ);
-        console.log(deQ);
-        let adList = this._adjacencyList.get(deQ);
-        console.log(adList);
-        for(let j in adList){
-          let neighbor = adList[j];
-          console.log(neighbor.vertex);
-          if(!visitedArray[neighbor]){
-            console.log('here');
-            visitedArray[neighbor] = true;
-            queue.push(neighbor);
-          }
+    queue.push(startNode);
+    visitedSet.add(startNode);
+
+    if(this.numberOfNodes === 0){
+      return null;
+    }
+
+    while(queue.length){
+      let deQ = queue.shift();
+      answerArray.push(deQ);
+      visitedSet.add(deQ);
+      const neighbors = this.getNeighbors(deQ);
+      for(let j of neighbors){
+        let neighbor = j.vertex;
+        if(visitedSet.has(neighbor)){
+          continue;
+        }else{
+          visitedSet.add(neighbor);
         }
+        queue.push(neighbor);
       }
     }
     return answerArray;
   }
+
+
+
 
   size(){
     if(this.numberOfNodes === 0){
