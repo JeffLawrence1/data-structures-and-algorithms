@@ -41,8 +41,8 @@ class Graph {
   }
 
   addBiDirectionalEdge(vertex_a, vertex_b, weight = 0){
-    this.addDirectedEdge(vertex_a, vertex_b, weight);
-    this.addDirectedEdge(vertex_b, vertex_a, weight);
+    this.addEdge(vertex_a, vertex_b, weight);
+    this.addEdge(vertex_b, vertex_a, weight);
   }
 
   // getNodes(startVertex){
