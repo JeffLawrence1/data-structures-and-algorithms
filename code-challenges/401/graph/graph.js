@@ -23,7 +23,8 @@ class Graph {
   }
 
   addNode(value){
-    let newNode = this.addVertex(new Vertex(value));
+    let newNode = new Vertex(value);
+    this.addVertex(newNode);
     return newNode;
   }
 
@@ -85,6 +86,7 @@ class Graph {
 
   getNeighbors(vertex){
     if(!this._adjacencyList.has(vertex)){
+      // console.log(vertex);
       throw new Error('ERROR: invalid vertex', vertex);
     }
     return [...this._adjacencyList.get(vertex)];
