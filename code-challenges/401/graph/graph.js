@@ -45,35 +45,42 @@ class Graph {
     this.addDirectedEdge(vertex_b, vertex_a, weight);
   }
 
-  getNodes(startVertex){
-    const stack = [];
-    const visitedVertices = new Set();
-    const parentPath = new Array();
+  // getNodes(startVertex){
+  //   const stack = [];
+  //   const visitedVertices = new Set();
+  //   const parentPath = new Array();
 
-    stack.push(startVertex);
-    visitedVertices.add(startVertex);
+  //   stack.push(startVertex);
+  //   visitedVertices.add(startVertex);
 
-    while(stack.length){
-      const currentVertex = stack.pop();
+  //   while(stack.length){
+  //     const currentVertex = stack.pop();
 
-      console.log(currentVertex);
+  //     console.log(currentVertex);
 
-      const neighbors = this.getNeighbors(currentVertex);
+  //     const neighbors = this.getNeighbors(currentVertex);
 
-      for(let edge of neighbors){
-        const neighborVertex = edge.vertex;
+  //     for(let edge of neighbors){
+  //       const neighborVertex = edge.vertex;
 
-        if(visitedVertices.has(neighborVertex)){
-          continue;
-        }else{
-          visitedVertices.add(neighborVertex);
-        }
+  //       if(visitedVertices.has(neighborVertex)){
+  //         continue;
+  //       }else{
+  //         visitedVertices.add(neighborVertex);
+  //       }
 
-        stack.push(neighborVertex);
-        parentPath.push(neighborVertex, currentVertex);
-      }
+  //       stack.push(neighborVertex);
+  //       parentPath.push(neighborVertex, currentVertex);
+  //     }
+  //   }
+  //   return parentPath;
+  // }
+  getNodes() {
+    if(this.numberOfNodes !== 0){
+      return [...this._adjacencyList.keys()];
+    }else{
+      return null;
     }
-    return parentPath;
   }
 
   getNeighbors(vertex){
