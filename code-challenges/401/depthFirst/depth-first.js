@@ -1,6 +1,10 @@
 'use strict';
 
 function depthFirst(graph) {
+  console.log(graph);
+  if(graph.size() < 1){
+    return 'invalid graph';
+  }
   const stack = [];
   const visitedVertices = new Set();
   let result = [];

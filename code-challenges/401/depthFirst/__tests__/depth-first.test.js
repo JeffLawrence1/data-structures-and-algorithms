@@ -6,12 +6,14 @@ const depthFirst = require('../depth-first');
 describe('Graph Tests', () => {
 
   let graph;
+  let graph2;
   let three;
   let seven;
 
   beforeEach(() => {
 
     graph = new Graph.Graph();
+    graph2 = new Graph.Graph();
 
     const eight = graph.addNode(8);
     const six = graph.addNode(6);
@@ -20,15 +22,7 @@ describe('Graph Tests', () => {
     three = graph.addNode(3);
     const oh = graph.addNode(0);
     const nine = graph.addNode(9);
-    
-    // graph.addVertex(eight);
-    // graph.addVertex(six);
-    // graph.addVertex(seven);
-    // graph.addVertex(five);
-    // graph.addVertex(three);
-    // graph.addVertex(oh);
-    // graph.addVertex(nine);
-    
+
     graph.addEdge(eight, six);
     graph.addEdge(eight, five);
     graph.addEdge(six, seven);
@@ -37,12 +31,17 @@ describe('Graph Tests', () => {
     graph.addEdge(three, oh);
     graph.addEdge(oh, nine);
     graph.addEdge(nine, eight);
+
   });
 
 
-  it('Node can be successfully added to the graph', () => {
-    // expect(graph.size()).toBe(7);
-    // graph.addNode(19);
-    // expect(graph.size()).toBe(8);
+  it('can succesfully conduct a depth first search', () => {
+
+    expect(depthFirst(graph)).toEqual([{'value': 8}, {'value': 5}, {'value': 3}, {'value': 0}, {'value': 9}, {'value': 6}, {'value': 7}]);
+  });
+
+  it('will return an invalid message if graph has no nodes', () => {
+
+    expect(depthFirst(graph2)).toEqual('invalid graph');
   });
 });
