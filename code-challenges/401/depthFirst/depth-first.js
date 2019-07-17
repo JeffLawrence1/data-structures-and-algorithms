@@ -1,8 +1,11 @@
 'use strict';
 
 function depthFirst(graph) {
-  console.log(graph);
-  if(graph.size() < 1){
+
+  if(typeof graph === 'string' || typeof graph === 'number'){
+    return 'invalid graph';
+  }
+  else if(graph.size() < 1){
     return 'invalid graph';
   }
   const stack = [];

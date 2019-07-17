@@ -1,19 +1,19 @@
-# Get Edges
+# Depth First
 <!-- Short summary or background information -->
-Implementation of a function that takes a graph and array and returns the price to get to a location
+Implementation of a graph depth first traversal function
 
 ## Challenge
 <!-- Description of the challenge -->
-Create a function not inside the graph class that given a graph and an array of cities can travel from the start location to the end and return the cost of the trip, or returns false if the trip is not possible to travel with "direct flights" meaning each node must be traversed in order.
+Create a function not inside the graph class that given a graph can traverse the array depth first and return a list in the order traversed
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-Ended up using three loops so the Big O is pretty bad at O(n2).  One loop to find if the start city exists in the graph, another to loop over the path and the last to loop through neighbor nodes
+Ended up using a while loop with a for loop on the inside so the Big O is pretty bad at O(n2).  One loop to run through the stack and the other run through each nodes neighbors
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
-getEdge - function that takes a graph and array and either returns true with cost amount or false with 0.
+depthFirst - function that takes a graph and does  a depth first traversal and returns a list of the nodes
 
 ## Answer Code
-* [code](./getEdge.js)
-* [breadthFirst whiteboard](https://photos.app.goo.gl/gZ9kDBirszJk5AEeA)
+* [code](./depth-first.js)
+* [breadthFirst whiteboard](https://photos.app.goo.gl/ZfZoJqiDzJpu3B8H6)

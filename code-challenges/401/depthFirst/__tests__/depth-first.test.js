@@ -9,6 +9,8 @@ describe('Graph Tests', () => {
   let graph2;
   let three;
   let seven;
+  let stringTest = 'nklnklnlnk';
+  let numTest = 124;
 
   beforeEach(() => {
 
@@ -40,8 +42,14 @@ describe('Graph Tests', () => {
     expect(depthFirst(graph)).toEqual([{'value': 8}, {'value': 5}, {'value': 3}, {'value': 0}, {'value': 9}, {'value': 6}, {'value': 7}]);
   });
 
-  it('will return an invalid message if graph has no nodes', () => {
+  it('will return an invalid message if graph has no vertices', () => {
 
     expect(depthFirst(graph2)).toEqual('invalid graph');
+  });
+
+  it('will return an invalid message if graph has no nodes', () => {
+
+    expect(depthFirst(stringTest)).toEqual('invalid graph');
+    expect(depthFirst(numTest)).toEqual('invalid graph');
   });
 });
