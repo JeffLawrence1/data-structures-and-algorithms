@@ -16,4 +16,4 @@ getEdge - function that takes a graph and array and either returns true with cos
 
 ## Answer Code
 * [code](./getEdge.js)
-* [breadthFirst whiteboard](https://photos.app.goo.gl/gZ9kDBirszJk5AEeA)
+* [getEdge Whiteboard](https://photos.app.goo.gl/gZ9kDBirszJk5AEeA)
