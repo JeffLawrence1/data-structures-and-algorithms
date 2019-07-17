@@ -8,6 +8,7 @@ describe('Graph Tests', () => {
   let graph;
   let cityArr = ['Seattle', 'New York', 'LA', 'Bend', 'Seattle', 'Tokyo'];
   let cityArr2 = ['Seattle', 'Bend', 'LA', 'Vancouver'];
+  // let cityArr2 = ['Seattle', 'Seattle'];
 
   beforeEach(() => {
 
@@ -31,10 +32,13 @@ describe('Graph Tests', () => {
   });
 
 
-  it('Happy case, cannot find Vancouver', () => {
+  it('Happy case, can find Vancouver', () => {
 
-    expect(getEdge(graph, cityArr2)).toEqual('true $235');
+    expect(getEdge(graph, cityArr)).toEqual('true $235');
   });
 
+  it('Sad case, cannot find Tokyo', () => {
 
+    expect(getEdge(graph, cityArr2)).toEqual('false $0');
+  });
 });
