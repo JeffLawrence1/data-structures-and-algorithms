@@ -8,7 +8,7 @@ describe('Graph Tests', () => {
   let graph;
   let cityArr = ['Seattle', 'New York', 'LA', 'Bend', 'Seattle', 'Tokyo'];
   let cityArr2 = ['Seattle', 'Bend', 'LA', 'Vancouver'];
-  // let cityArr2 = ['Seattle', 'Seattle'];
+  let cityArr3 = ['Seattle', 'Seattle'];
 
   beforeEach(() => {
 
@@ -40,5 +40,10 @@ describe('Graph Tests', () => {
   it('Sad case, cannot find Tokyo', () => {
 
     expect(getEdge(graph, cityArr2)).toEqual('false $0');
+  });
+
+  it('Will return false if you do not actually attempt to go anywhere', () => {
+
+    expect(getEdge(graph, cityArr3)).toEqual('false $0');
   });
 });
