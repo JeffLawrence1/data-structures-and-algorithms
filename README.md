@@ -66,3 +66,5 @@ Data Structures and Algorithms repo for 301 and 401
 * [leftJoin](./code-challenges/401/leftJoin)
 
 * [graph](./code-challenges/401/graph)
+
+* [getEdge](./code-challenges/401/getEdge)
